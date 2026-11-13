@@ -50,10 +50,8 @@ const STOPWORDS = new Set([
   'your'
 ]);
 
-/* A deliberately small stemmer: it makes "references", "referenced" and "reference" the same word, */
-/* and "lookups" the same as "lookup". It is not a full linguistic stemmer. It only trims common */
-/* endings, and the same function is applied to the query and to the entry text, so even when a stem */
-/* is not a real word, both sides agree on it. */
+/* A small stemmer: trims common endings so "references", "referenced" and "reference" become the */
+/* same word, and "lookups" the same as "lookup". Applied to both the query and the entry text. */
 export function stem(word: string): string {
   let w = word;
   if (w.length > 4 && w.endsWith('ies')) w = w.slice(0, -3) + 'y';
@@ -68,8 +66,7 @@ export function stem(word: string): string {
 }
 
 /* The meaningful words in a piece of text, stemmed. Splits on anything that is not a letter or */
-/* digit (so "Ctrl + [" gives "ctrl"), and drops filler words. Unicode letters are kept, so the */
-/* same code can handle other languages later. */
+/* digit (so "Ctrl + [" gives "ctrl"), and drops filler words. Unicode letters are kept. */
 export function wordsOf(text: string): string[] {
   const all = text.toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [];
   return all.filter((w) => !STOPWORDS.has(w)).map(stem);

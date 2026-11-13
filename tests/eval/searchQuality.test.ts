@@ -14,9 +14,7 @@ const answerable = (results: typeof current) => results.filter((r) => r.category
 const dev = (results: typeof current) => answerable(results).filter((r) => !r.heldOut);
 const held = (results: typeof current) => answerable(results).filter((r) => r.heldOut);
 
-/* A safety net, not a target. The floors sit a little below what the search achieves today, so an */
-/* accidental change that makes search clearly worse fails here. Improving search does not mean */
-/* raising these numbers: re-run `npm run eval` to see the real figures. */
+/* Minimum scores, set a little below the current results. A clearly worse search fails here. */
 describe('search quality floors', () => {
   it('finds the right answer first for most dev queries, and in the top three for nearly all', () => {
     const s = summarize(dev(current));

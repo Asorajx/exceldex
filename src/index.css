@@ -1,4 +1,4 @@
-/* Fonts are self-hosted (see main.tsx), so the site makes no requests to third parties. */
+/* Fonts are self-hosted (see main.tsx). */
 
 /* Neutral black-and-white theme. The only colour is the green in the title. */
 :root {
@@ -418,7 +418,7 @@ kbd,
 
 .answer__header {
   display: flex;
-  flex-wrap: wrap; /* a long title such as NETWORKDAYS pushes its pill onto the next line on a small phone */
+  flex-wrap: wrap; /* lets the pill wrap onto the next line */
   align-items: center;
   gap: 4px 12px;
 }
@@ -781,6 +781,23 @@ details li + li {
     opacity: 0;
     transform: translateY(8px);
   }
+}
+
+/* Theme wipe: turns off the default cross-fade so only the circle animation from useTheme.ts shows. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  z-index: 1;
+}
+
+/* Added to <html> by useTheme.ts during a switch without the wipe; turns off all colour transitions. */
+.theme-switching,
+.theme-switching * {
+  transition: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -30,8 +30,7 @@ export function SearchBox({ query, onQueryChange, results, suggestions, onSelect
 
   const hasQuery = query.trim() !== '';
   const items = hasQuery ? results.slice(0, MAX_RESULTS) : suggestions;
-  /* The list of options only exists when there is something to list. With no matches the panel shows */
-  /* a message instead, so the box must not claim to control a list that is not on the page. */
+  /* The list of options is only on the page when there is something to list. */
   const listboxShown = open && !(hasQuery && results.length === 0);
 
   function choose(id: string) {

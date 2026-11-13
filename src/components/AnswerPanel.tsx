@@ -40,8 +40,7 @@ function SampleSheet({ rows }: { rows: string[][] }) {
       <p className="sheet__label" id="sheet-label">
         Sample data
       </p>
-      {/* A wide sheet scrolls inside this box instead of making the whole page scroll sideways.
-          It can take keyboard focus, so people who cannot use a mouse can scroll it too. */}
+      {/* A wide sheet scrolls inside this box. The box is focusable so the keyboard can scroll it. */}
       <div className="sheet__scroll" role="region" aria-labelledby="sheet-label" tabIndex={0}>
         <table className="sheet">
           <thead>

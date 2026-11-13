@@ -1,4 +1,4 @@
-import type { Theme } from '../theme/useTheme';
+import type { Theme, WipeOrigin } from '../theme/useTheme';
 
 /* =========================
    Theme Toggle
@@ -6,7 +6,7 @@ import type { Theme } from '../theme/useTheme';
 
 interface Props {
   theme: Theme;
-  onToggle: () => void;
+  onToggle: (origin: WipeOrigin) => void;
 }
 
 export function ThemeToggle({ theme, onToggle }: Props) {
@@ -16,7 +16,11 @@ export function ThemeToggle({ theme, onToggle }: Props) {
     <button
       type="button"
       className="theme-toggle"
-      onClick={onToggle}
+      onClick={(event) => {
+        /* Passes the button's centre as the wipe origin. */
+        const box = event.currentTarget.getBoundingClientRect();
+        onToggle({ x: box.left + box.width / 2, y: box.top + box.height / 2 });
+      }}
       aria-label={`Switch to ${next} theme`}
       title={`Switch to ${next} theme`}
     >

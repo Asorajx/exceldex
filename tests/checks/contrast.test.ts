@@ -77,8 +77,8 @@ describe.each([
 
 describe('the two copies of the dark theme', () => {
   it('stay identical, so following the system and choosing dark look the same', () => {
-    /* One block applies when the user picks dark; the other when they have not picked and their */
-    /* system is dark. If they drift apart, the same person sees two different dark themes. */
+    /* One block applies when the user picks dark; the other when nothing is picked and the system */
+    /* is dark. Both must define the same colours. */
     const mediaStart = css.indexOf('@media (prefers-color-scheme: dark)');
     const system = tokens(blockAfter(':root:not([data-theme="light"])', mediaStart));
     const chosen = tokens(darkBlock);

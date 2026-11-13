@@ -6,10 +6,8 @@ import { normalizeQuery, tokenize, wordsOf } from './normalizeQuery';
    Search Scoring
    ========================= */
 
-/* Scoring is simple, explainable and tunable. Fields that say what an entry IS (title, keywords, */
-/* task phrases) count for much more than text that merely MENTIONS a word (steps, notes, argument */
-/* descriptions). These weights are a starting point, not proven values; Phase 2 tunes them */
-/* against a set of real test queries. */
+/* Score weights. Fields that say what an entry is (title, keywords, task phrases) count for more */
+/* than text that only mentions a word (steps, notes, argument descriptions). */
 const SCORE = {
   /* The whole query against one field */
   exactTitle: 100,

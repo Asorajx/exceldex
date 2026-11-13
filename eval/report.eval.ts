@@ -18,7 +18,7 @@ const path = (name: string) => resultsDir + name;
 /*                            eval/results/latest.json     (per-query results) */
 /*   npm run eval:freeze   -> copies latest.json to before.json, the snapshot later runs compare with */
 
-/* This is a report, not a pass/fail test: it never fails because the numbers are low. */
+/* This only writes reports; it does not assert on the numbers. */
 it('writes the evaluation report', () => {
   const queries = queryFile as EvalQuery[];
 

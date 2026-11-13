@@ -4,12 +4,10 @@ import type { ExcelEntry } from '../src/types/excelEntry';
    Stage A Baseline
    ========================= */
 
-/* "Stage A": the first, simplest search, kept here so every later version can be compared with it. */
-/* It is the original matcher from the project brief: normalise the query, give exact and partial */
+/* "Stage A": the first, simplest search. It normalises the query, gives exact and partial */
 /* title matches priority, then look for the query's words in keywords, task phrases and the */
 /* description. It has no stemming, no typo tolerance, and it never reads steps, notes or arguments. */
 
-/* Do not "improve" this file. Its whole job is to stay the same. */
 
 const SCORE = {
   exactTitle: 100,

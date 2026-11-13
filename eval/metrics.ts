@@ -2,7 +2,7 @@
    Evaluation Metrics
    ========================= */
 
-/* The kinds of query we measure separately, so a weak spot shows up instead of averaging away. */
+/* The kinds of query that are measured separately. */
 export const CATEGORIES = [
   'exact',
   'partial',
@@ -23,8 +23,7 @@ export interface EvalQuery {
   category: Category;
   /* Entry IDs that are a correct answer. Empty only for "no-result" queries. */
   acceptable: string[];
-  /* Held-out queries are written before any results are seen and are NOT used to tune the search. */
-  /* They show whether improvements carry over to queries the tuning never looked at. */
+  /* True for held-out queries: ones not used to tune the search. */
   heldOut?: boolean;
 }
 
@@ -116,9 +115,8 @@ export function byCategory(results: QueryResult[]): Map<Category, QueryResult[]>
 
 const normalizeText = (text: string) => text.trim().toLowerCase().replace(/\s+/g, ' ');
 
-/* Queries that are word-for-word copies of some entry's keyword or task phrase. Finding these is */
-/* close to a lookup, so they flatter the results. They are reported separately so the numbers can */
-/* be shown with and without them. "Exact" queries are excluded: they copy a title on purpose. */
+/* Queries that are word-for-word copies of some entry's keyword or task phrase. */
+/* "Exact" queries are excluded. */
 export function verbatimQueries(
   queries: EvalQuery[],
   entries: Array<{ keywords: string[]; taskPhrases: string[] }>

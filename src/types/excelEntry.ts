@@ -69,8 +69,7 @@ export interface TipEntry extends BaseEntry {
   keys?: KeyGroup[];
   /* What to do, in order. */
   steps: string[];
-  /* Set when part of the tip is not in the official documentation. Shown to the reader so an */
-  /* unofficial shortcut is never presented as an official one. */
+  /* Set when part of the tip is not in the official documentation. Shown to the reader as a note. */
   unofficial?: string;
 }
 
