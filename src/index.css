@@ -1,0 +1,1159 @@
+/* Fonts are self-hosted (see main.tsx), so the site makes no requests to third parties. */
+
+/* Neutral black-and-white theme. The only colour is the green in the title. */
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-2: #f3f3f3;
+  --surface-3: #e9e9e9;
+  --text: #111111;
+  --text-muted: #666666;
+  --border: #e4e4e4;
+  --accent: #111111; /* primary buttons */
+  --on-accent: #ffffff;
+  --ring: #111111;
+  --brand: #107c41; /* title only */
+  /* Action colours: green = do/add, red = remove, yellow = required. Pairs keep text at 4.5:1 or better. */
+  --green: #107c41;
+  --on-green: #ffffff;
+  --green-soft: #e3f4ea;
+  --green-border: #a9d8bc;
+  /* Blue marks tips, the way green marks functions. */
+  --blue: #2563eb;
+  --blue-soft: #e0edff;
+  --blue-text: #1d4ed8;
+  --blue-border: #a9c7f5;
+  --on-blue: #ffffff;
+  --green-text: #0b5d31;
+  --red-soft: #fdeaea;
+  --red-text: #b42318;
+  --yellow-soft: #fde68a;
+  --yellow-text: #5c4300;
+  --scrim: rgb(0 0 0 / 0.18);
+  --radius: 16px;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.05), 0 8px 28px rgb(0 0 0 / 0.07);
+  --font: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+  --t: 160ms ease;
+}
+
+/* Dark tokens apply when the user picks dark, or when they have not picked and their system is dark. */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --surface-2: #1d1d1d;
+  --surface-3: #2a2a2a;
+  --text: #f2f2f2;
+  --text-muted: #a3a3a3;
+  --border: #262626;
+  --accent: #f2f2f2;
+  --on-accent: #0a0a0a;
+  --ring: #f2f2f2;
+  --brand: #2fa968;
+  --green: #2fa968;
+  --on-green: #06130b;
+  --green-soft: #173323;
+  --green-border: #2f6e4a;
+  --blue: #5b8def;
+  --blue-soft: #172a4d;
+  --blue-text: #93bbff;
+  --blue-border: #2f4f8a;
+  --on-blue: #07101f;
+  --green-text: #7fd6a4;
+  --red-soft: #3a1a1a;
+  --red-text: #ff8a80;
+  --yellow-soft: #4a3b0a;
+  --yellow-text: #fde68a;
+  --scrim: rgb(0 0 0 / 0.5);
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.5), 0 8px 28px rgb(0 0 0 / 0.45);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --surface-2: #1d1d1d;
+    --surface-3: #2a2a2a;
+    --text: #f2f2f2;
+    --text-muted: #a3a3a3;
+    --border: #262626;
+    --accent: #f2f2f2;
+    --on-accent: #0a0a0a;
+    --ring: #f2f2f2;
+    --brand: #2fa968;
+    --green: #2fa968;
+    --on-green: #06130b;
+    --green-soft: #173323;
+    --green-border: #2f6e4a;
+    --blue: #5b8def;
+    --blue-soft: #172a4d;
+    --blue-text: #93bbff;
+    --blue-border: #2f4f8a;
+    --on-blue: #07101f;
+    --green-text: #7fd6a4;
+    --red-soft: #3a1a1a;
+    --red-text: #ff8a80;
+    --yellow-soft: #4a3b0a;
+    --yellow-text: #fde68a;
+    --scrim: rgb(0 0 0 / 0.5);
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.5), 0 8px 28px rgb(0 0 0 / 0.45);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+code,
+pre,
+kbd,
+.arg-input {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  /* Show exactly what is typed: without this the font joins ">=" into a single "≥" symbol. */
+  font-variant-ligatures: none;
+}
+
+/* =========================
+   Layout
+   ========================= */
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px 64px;
+}
+
+.hero {
+  position: relative;
+  z-index: 10; /* the open search box floats above the answer */
+  padding: 16px 0 0;
+  text-align: center;
+}
+
+.topbar {
+  position: relative;
+  z-index: 3; /* above the dim layer, so the toggle always works */
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 0;
+  border-radius: 999px;
+  transition: background var(--t), color var(--t);
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  background: var(--surface-3);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.logo {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.logo__btn {
+  padding: 0 8px;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+}
+
+.logo span {
+  color: var(--brand);
+}
+
+.tagline {
+  margin: 4px 0 28px;
+  color: var(--text-muted);
+}
+
+.layout {
+  /* Reserves the search row's height; the open box overlays what follows. */
+  margin-top: 24px;
+}
+
+/* =========================
+   Search (one box that expands)
+   ========================= */
+
+.search {
+  position: relative;
+  max-width: 680px;
+  height: 58px; /* fixed: the box below grows over the page without pushing it */
+  margin: 0 auto;
+}
+
+/* A light dim behind the open box shows it is a temporary layer over the page. */
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: var(--scrim);
+  animation: fade 160ms ease-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.search__box {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 29px;
+  box-shadow: var(--shadow);
+  transition: border-color var(--t), border-radius var(--t);
+}
+
+.search__box:focus-within {
+  border-color: var(--green);
+}
+
+.search__box.is-open {
+  border-radius: 24px;
+}
+
+.search__row {
+  position: relative;
+  height: 56px;
+}
+
+.search__icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  transform: translateY(-50%);
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 2;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.search__input {
+  width: 100%;
+  height: 100%;
+  padding: 0 18px 0 52px;
+  font: inherit;
+  font-size: 1.05rem;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+}
+
+.search__input:focus {
+  outline: none;
+}
+
+.search__input::placeholder {
+  color: var(--text-muted);
+}
+
+.search__panel {
+  max-height: min(60vh, 440px);
+  padding: 0 8px 8px;
+  overflow-y: auto;
+}
+
+.search__heading {
+  margin: 4px 12px 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.option {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 12px;
+  min-height: 44px;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.option[aria-selected='true'] {
+  background: var(--surface-2);
+}
+
+.option__title {
+  font-weight: 600;
+}
+
+.option__desc {
+  grid-column: 1 / -1;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.search__empty {
+  margin: 0;
+  padding: 8px 12px 12px;
+  color: var(--text-muted);
+}
+
+.search__empty code {
+  font-size: 0.85em;
+  padding: 1px 6px;
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+
+.badge {
+  align-self: center;
+  padding: 1px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--green-text);
+  background: var(--green-soft);
+  border-radius: 999px;
+}
+
+.chip {
+  min-height: 36px;
+  padding: 4px 14px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  background: var(--surface-2);
+  border: 0;
+  border-radius: 999px;
+  transition: background var(--t);
+}
+
+.chip:hover {
+  background: var(--surface-3);
+}
+
+/* =========================
+   Answer panel
+   ========================= */
+
+.answer {
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--green-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: rise 220ms ease-out;
+}
+
+.answer__header {
+  display: flex;
+  flex-wrap: wrap; /* a long title such as NETWORKDAYS pushes its pill onto the next line on a small phone */
+  align-items: center;
+  gap: 4px 12px;
+}
+
+.answer h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.answer h3 {
+  margin: 28px 0 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.answer__lead {
+  margin: 8px 0 0;
+  font-size: 1.1rem;
+  max-width: 90ch;
+}
+
+.answer__explain {
+  margin: 0 0 12px;
+  max-width: 90ch;
+  font-size: 1.02rem;
+}
+
+.hint {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* =========================
+   Formula card: editable formula + one explanation row per argument
+   ========================= */
+
+.formula {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px;
+  background: var(--surface-2);
+  border-radius: 12px;
+}
+
+.formula__line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 0;
+  padding: 6px 8px 10px;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Fixed text: the function name, brackets and commas cannot be edited. */
+.locked {
+  user-select: all;
+  white-space: pre;
+}
+
+.arg-input {
+  min-width: 3ch;
+  max-width: 100%;
+  margin: 0 6px;
+  padding: 2px 8px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: border-color var(--t);
+}
+
+.arg-input:hover {
+  border-color: var(--border);
+}
+
+.arg-input:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+.formula__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* the result sits right beside Copy */
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 0 0 6px 8px;
+}
+
+.formula__result {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.formula__result strong {
+  color: var(--text);
+}
+
+.formula__buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.reset {
+  min-height: 32px;
+  padding: 2px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface-3);
+  border: 0;
+  border-radius: 8px;
+  transition: opacity var(--t);
+}
+
+.reset:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.reset:disabled {
+  color: var(--text-muted);
+  background: none;
+  cursor: default;
+  opacity: 0.6;
+}
+
+.copy {
+  flex-shrink: 0;
+  min-height: 32px;
+  padding: 2px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--on-green);
+  background: var(--green);
+  border: 0;
+  border-radius: 8px;
+  transition: opacity var(--t);
+}
+
+.copy:hover {
+  opacity: 0.85;
+}
+
+.syntax-line {
+  margin: 0;
+  padding: 2px 8px 8px;
+  color: var(--text-muted);
+}
+
+.syntax-line code {
+  overflow-wrap: anywhere;
+  font-size: 0.85rem;
+}
+
+/* Rows share one grid, so values, names, descriptions and buttons line up in every row. */
+.parts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.part {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 76px;
+  align-items: center;
+  gap: 0 8px;
+}
+
+.part__main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 4px 20px;
+  min-width: 0;
+  padding: 8px 10px;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 10px;
+  transition: background var(--t);
+}
+
+button.part__main:hover {
+  background: var(--surface);
+}
+
+.part__value {
+  align-self: start;
+  width: fit-content;
+  max-width: 100%;
+  padding: 2px 10px;
+  overflow-wrap: anywhere;
+  background: var(--surface);
+  border-radius: 6px;
+}
+
+button.part__main:hover .part__value {
+  background: var(--surface-2);
+}
+
+.part__value--off {
+  padding-left: 0;
+  color: var(--text-muted);
+  background: none;
+  font-style: italic;
+}
+
+.part__body {
+  display: block;
+}
+
+.part__desc {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.part__action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.part__toggle {
+  width: 100%;
+  min-height: 30px;
+  padding: 2px 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--green-text);
+  background: var(--green-soft);
+  border: 0;
+  border-radius: 8px;
+  transition: opacity var(--t);
+}
+
+.part__toggle:hover {
+  opacity: 0.8;
+}
+
+.part__toggle--remove {
+  color: var(--red-text);
+  background: var(--red-soft);
+}
+
+.part__toggle--remove:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 640px) {
+  .answer {
+    padding: 20px;
+  }
+  .part {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .part__main {
+    grid-template-columns: minmax(0, 1fr);
+    padding-bottom: 6px;
+  }
+  .part__action {
+    justify-content: flex-start;
+    padding: 0 12px 10px;
+  }
+  .part__toggle {
+    width: auto;
+  }
+}
+
+.arg__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.arg__head code {
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.tag {
+  padding: 0 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+
+.tag--required {
+  color: var(--yellow-text);
+  background: var(--yellow-soft);
+}
+
+.tag--optional {
+  color: var(--text-muted);
+  background: var(--surface-3);
+}
+
+/* =========================
+   Notes, related, source
+   ========================= */
+
+details {
+  margin-top: 20px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+details ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  max-width: 90ch;
+  color: var(--text-muted);
+}
+
+details li + li {
+  margin-top: 6px;
+}
+
+.related {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0 0;
+  color: var(--text-muted);
+}
+
+.source {
+  margin: 20px 0 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.source a {
+  color: inherit;
+}
+
+.source a:hover {
+  color: var(--text);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================
+   Sample sheet
+   ========================= */
+
+.sheet-block {
+  margin: 20px 0 16px;
+}
+
+.sheet__label {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.sheet {
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  background: var(--surface);
+}
+
+.sheet th,
+.sheet td {
+  padding: 4px 14px;
+  text-align: left;
+  white-space: pre;
+  border: 1px solid var(--border);
+}
+
+.sheet thead th,
+.sheet tbody th {
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--surface-2);
+}
+
+.sheet tbody th {
+  padding: 4px 10px;
+  text-align: center;
+}
+
+.sheet__head {
+  font-weight: 600;
+}
+
+.sheet__spaces {
+  color: var(--text-muted);
+}
+
+/* =========================
+   Home: topic pills and entry cards
+   ========================= */
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 24px; /* extra space between the type pills and the topic pills */
+  margin: 0 0 16px;
+}
+
+.pills__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pills__clear {
+  padding: 4px 6px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  background: none;
+  border: 0;
+}
+
+.pills__clear:hover {
+  color: var(--text);
+}
+
+.home__empty {
+  padding: 24px 0;
+  color: var(--text-muted);
+}
+
+.pill {
+  min-height: 36px;
+  padding: 4px 16px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 0;
+  border-radius: 999px;
+  transition: background var(--t);
+}
+
+.pill:hover {
+  background: var(--surface-3);
+}
+
+.pill[aria-pressed='true'] {
+  color: var(--on-accent);
+  background: var(--accent);
+}
+
+.pill__count {
+  margin-left: 4px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  padding: 16px 18px;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--green-border);
+  border-radius: 14px;
+  transition: background var(--t), border-color var(--t);
+}
+
+.card:hover {
+  background: var(--surface-2);
+  border-color: var(--green);
+}
+
+.card__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Sits on the first line of the title, even when a long title wraps onto a second line. */
+.card__top .badge {
+  align-self: baseline;
+  flex-shrink: 0;
+}
+
+.card__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.card__desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* =========================
+   Tips: keycaps, warning callout, steps
+   ========================= */
+
+.keygroup dl {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.keygroup__label {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.keycard {
+  display: grid;
+  gap: 18px;
+  margin: 20px 0 0;
+  padding: 16px 18px;
+  background: var(--surface-2);
+  border-radius: 12px;
+}
+
+.keycard__row {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.keycard dt {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.keycard dd {
+  margin: 0;
+}
+
+.keys {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+kbd {
+  padding: 3px 10px;
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+}
+
+.keys__join {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* States how to press the keys. Solid outline = hold together; dashed outline = one at a time. */
+.keys__how {
+  margin-left: 8px;
+  padding: 2px 12px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--text-muted);
+  border-radius: 999px;
+}
+
+.keys--sequence .keys__how,
+.keys--mixed .keys__how {
+  border-style: dashed;
+}
+
+.callout {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  color: var(--yellow-text);
+  background: var(--yellow-soft);
+  border-radius: 10px;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 22px;
+  max-width: 90ch;
+}
+
+.steps li + li {
+  margin-top: 8px;
+}
+
+/* =========================
+   Tips are blue (functions stay green)
+   ========================= */
+
+.badge--tip {
+  color: var(--blue-text);
+  background: var(--blue-soft);
+}
+
+.card--tip {
+  border-color: var(--blue-border);
+}
+
+.card--tip:hover {
+  border-color: var(--blue);
+}
+
+.answer--tip {
+  border-color: var(--blue-border);
+}
+
+/* The type pills match the entry colours: green for functions, blue for tips. */
+.pill--function {
+  color: var(--green-text);
+  background: var(--green-soft);
+}
+
+.pill--function:hover {
+  background: var(--green-soft);
+  filter: brightness(0.95);
+}
+
+.pill--function[aria-pressed='true'] {
+  color: var(--on-green);
+  background: var(--green);
+}
+
+.pill--tip {
+  color: var(--blue-text);
+  background: var(--blue-soft);
+}
+
+.pill--tip:hover {
+  background: var(--blue-soft);
+  filter: brightness(0.95);
+}
+
+.pill--tip[aria-pressed='true'] {
+  color: var(--on-blue);
+  background: var(--blue);
+}
+
+/* Must come after any `font:` shorthand, which would otherwise reset it. */
+code,
+pre,
+kbd,
+.arg-input {
+  font-variant-ligatures: none;
+}
+
+/* On a phone the keys need the full width: the platform label goes above them, and the
+   "how to press" note goes below, so a sequence like Alt, H, B, A is never split across lines. */
+@media (max-width: 560px) {
+  .keycard__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  .keys__how {
+    flex-basis: 100%;
+    max-width: fit-content;
+    margin: 2px 0 0;
+  }
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.site-footer {
+  max-width: 70ch;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* A wide sample sheet scrolls inside its own box, so it can never widen the page. */
+.sheet__scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 560px) {
+  .sheet th,
+  .sheet td {
+    padding: 4px 8px;
+  }
+}

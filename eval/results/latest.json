@@ -1,0 +1,2952 @@
+[
+  {
+    "query": "XLOOKUP",
+    "category": "exact",
+    "heldOut": false,
+    "acceptable": [
+      "xlookup"
+    ],
+    "returned": [
+      "xlookup",
+      "ifna",
+      "index",
+      "trim",
+      "iferror",
+      "vlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "sumifs",
+    "category": "exact",
+    "heldOut": false,
+    "acceptable": [
+      "sumifs"
+    ],
+    "returned": [
+      "sumifs",
+      "sumif",
+      "sum"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "IFERROR",
+    "category": "exact",
+    "heldOut": false,
+    "acceptable": [
+      "iferror"
+    ],
+    "returned": [
+      "iferror",
+      "ifna"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "TEXTJOIN",
+    "category": "exact",
+    "heldOut": false,
+    "acceptable": [
+      "textjoin"
+    ],
+    "returned": [
+      "textjoin"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "AutoSum",
+    "category": "exact",
+    "heldOut": false,
+    "acceptable": [
+      "autosum"
+    ],
+    "returned": [
+      "autosum"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "Fill down",
+    "category": "exact",
+    "heldOut": false,
+    "acceptable": [
+      "fill-down"
+    ],
+    "returned": [
+      "fill-down",
+      "counta",
+      "borders",
+      "go-to-special",
+      "round"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "Create a table",
+    "category": "exact",
+    "heldOut": false,
+    "acceptable": [
+      "create-table"
+    ],
+    "returned": [
+      "create-table",
+      "vlookup",
+      "jump-to-edge",
+      "select-row-column",
+      "xlookup",
+      "data-form",
+      "if"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "COUNTA",
+    "category": "exact",
+    "heldOut": true,
+    "acceptable": [
+      "counta"
+    ],
+    "returned": [
+      "counta",
+      "countif",
+      "countifs",
+      "len",
+      "networkdays"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "NETWORKDAYS",
+    "category": "exact",
+    "heldOut": true,
+    "acceptable": [
+      "networkdays"
+    ],
+    "returned": [
+      "networkdays"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "Highlight duplicates",
+    "category": "exact",
+    "heldOut": true,
+    "acceptable": [
+      "highlight-duplicates"
+    ],
+    "returned": [
+      "highlight-duplicates",
+      "unique",
+      "select-row-column",
+      "countif",
+      "fill-down",
+      "autosum"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "xlook",
+    "category": "partial",
+    "heldOut": false,
+    "acceptable": [
+      "xlookup"
+    ],
+    "returned": [
+      "xlookup",
+      "index",
+      "vlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "vlook",
+    "category": "partial",
+    "heldOut": false,
+    "acceptable": [
+      "vlookup"
+    ],
+    "returned": [
+      "vlookup",
+      "xlookup",
+      "index"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "textj",
+    "category": "partial",
+    "heldOut": false,
+    "acceptable": [
+      "textjoin"
+    ],
+    "returned": [
+      "textjoin",
+      "go-to-special",
+      "left",
+      "len",
+      "mid",
+      "right",
+      "trim"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "autos",
+    "category": "partial",
+    "heldOut": false,
+    "acceptable": [
+      "autosum"
+    ],
+    "returned": [
+      "autosum"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "gridl",
+    "category": "partial",
+    "heldOut": false,
+    "acceptable": [
+      "toggle-gridlines"
+    ],
+    "returned": [
+      "toggle-gridlines",
+      "borders",
+      "data-form"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "iferr",
+    "category": "partial",
+    "heldOut": false,
+    "acceptable": [
+      "iferror"
+    ],
+    "returned": [
+      "iferror"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "netw",
+    "category": "partial",
+    "heldOut": true,
+    "acceptable": [
+      "networkdays"
+    ],
+    "returned": [
+      "networkdays"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "highlight dup",
+    "category": "partial",
+    "heldOut": true,
+    "acceptable": [
+      "highlight-duplicates"
+    ],
+    "returned": [
+      "highlight-duplicates",
+      "select-row-column",
+      "autosum"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "sumi",
+    "category": "partial",
+    "heldOut": true,
+    "acceptable": [
+      "sumif",
+      "sumifs"
+    ],
+    "returned": [
+      "sumif",
+      "sumifs"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "look up a price from a product code",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "vlookup",
+      "xlookup",
+      "index",
+      "match"
+    ],
+    "returned": [
+      "vlookup",
+      "xlookup",
+      "min",
+      "index",
+      "len",
+      "left",
+      "mid",
+      "right",
+      "autosum",
+      "sum",
+      "sumif",
+      "sumifs",
+      "lock-references",
+      "trim",
+      "round",
+      "highlight-duplicates",
+      "trace-references",
+      "and",
+      "average",
+      "counta",
+      "countifs",
+      "data-form",
+      "ifs",
+      "max",
+      "or",
+      "textjoin"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "add up sales for one region",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "sumif",
+      "sumifs"
+    ],
+    "returned": [
+      "sumifs",
+      "sumif",
+      "autosum",
+      "sum",
+      "data-form",
+      "borders",
+      "max",
+      "filter",
+      "xlookup",
+      "vlookup",
+      "go-to-special",
+      "lock-references",
+      "countifs",
+      "textjoin",
+      "index",
+      "trim",
+      "jump-to-edge",
+      "ifs",
+      "or",
+      "select-row-column",
+      "sort",
+      "if",
+      "insert-date",
+      "and",
+      "networkdays",
+      "average",
+      "counta",
+      "min",
+      "round",
+      "countif",
+      "highlight-duplicates",
+      "trace-references",
+      "toggle-gridlines"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "count how many tasks are done",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "countif",
+      "countifs",
+      "counta"
+    ],
+    "returned": [
+      "countif",
+      "countifs",
+      "counta",
+      "networkdays",
+      "len",
+      "average",
+      "highlight-duplicates",
+      "data-form",
+      "if",
+      "ifs",
+      "left",
+      "mid",
+      "right",
+      "round"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "remove spaces from the start and end of text",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "trim"
+    ],
+    "returned": [
+      "trim",
+      "mid",
+      "borders",
+      "right",
+      "jump-to-edge",
+      "left",
+      "unique",
+      "toggle-gridlines",
+      "textjoin",
+      "len",
+      "select-row-column",
+      "networkdays",
+      "go-to-special",
+      "vlookup",
+      "sumif",
+      "ifs",
+      "data-form",
+      "sort",
+      "and",
+      "average",
+      "counta",
+      "countif",
+      "if",
+      "ifna",
+      "match",
+      "max",
+      "min",
+      "or",
+      "sum",
+      "xlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "combine first and last name into one cell",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "textjoin"
+    ],
+    "returned": [
+      "textjoin",
+      "go-to-special",
+      "right",
+      "jump-to-edge",
+      "countif",
+      "filter",
+      "highlight-duplicates",
+      "lock-references",
+      "sumif",
+      "sort",
+      "left",
+      "trace-references",
+      "sum",
+      "min",
+      "counta",
+      "match",
+      "unique",
+      "insert-date",
+      "borders",
+      "fill-down",
+      "ifs",
+      "iferror",
+      "len",
+      "if",
+      "index",
+      "countifs",
+      "xlookup",
+      "mid",
+      "or",
+      "sumifs",
+      "networkdays",
+      "autosum",
+      "average",
+      "and",
+      "data-form",
+      "select-row-column",
+      "vlookup",
+      "toggle-gridlines",
+      "max",
+      "trim",
+      "create-table",
+      "ifna"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "show a message instead of an error",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "iferror",
+      "ifna"
+    ],
+    "returned": [
+      "iferror",
+      "ifna",
+      "toggle-gridlines",
+      "filter",
+      "if",
+      "trace-references",
+      "unique",
+      "borders",
+      "insert-date",
+      "jump-to-edge",
+      "select-row-column",
+      "average",
+      "counta",
+      "sum",
+      "sumifs",
+      "autosum",
+      "data-form",
+      "ifs"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "list each department only once",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "unique"
+    ],
+    "returned": [
+      "unique",
+      "filter",
+      "go-to-special",
+      "highlight-duplicates",
+      "and",
+      "match",
+      "countif",
+      "sum",
+      "min",
+      "sort",
+      "jump-to-edge",
+      "right",
+      "textjoin",
+      "data-form",
+      "sumif",
+      "toggle-gridlines",
+      "select-row-column",
+      "trace-references",
+      "trim",
+      "borders",
+      "countifs",
+      "counta",
+      "iferror",
+      "ifna",
+      "ifs",
+      "round",
+      "vlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "show only the rows for one team",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "filter"
+    ],
+    "returned": [
+      "filter",
+      "select-row-column",
+      "toggle-gridlines",
+      "data-form",
+      "sumif",
+      "go-to-special",
+      "autosum",
+      "countifs",
+      "match",
+      "if",
+      "sort",
+      "iferror",
+      "ifna",
+      "unique",
+      "jump-to-edge",
+      "and",
+      "index",
+      "ifs",
+      "textjoin",
+      "trace-references",
+      "sumifs",
+      "vlookup",
+      "trim",
+      "lock-references",
+      "insert-date",
+      "or",
+      "xlookup",
+      "countif",
+      "highlight-duplicates",
+      "counta",
+      "round",
+      "sum"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "sort names alphabetically",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "sort"
+    ],
+    "returned": [
+      "sort",
+      "textjoin",
+      "go-to-special",
+      "iferror",
+      "len",
+      "index",
+      "match",
+      "vlookup",
+      "xlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "round a number to two decimals",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "round"
+    ],
+    "returned": [
+      "round",
+      "countifs",
+      "networkdays",
+      "and",
+      "go-to-special",
+      "match",
+      "autosum",
+      "average",
+      "max",
+      "min",
+      "sum",
+      "index",
+      "borders",
+      "ifna",
+      "sumif",
+      "sumifs",
+      "filter",
+      "data-form",
+      "counta",
+      "lock-references",
+      "mid",
+      "sort",
+      "vlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "get the first three letters of a code",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "left"
+    ],
+    "returned": [
+      "left",
+      "mid",
+      "len",
+      "right",
+      "vlookup",
+      "trace-references",
+      "match",
+      "max",
+      "min",
+      "xlookup",
+      "unique",
+      "textjoin",
+      "ifs",
+      "toggle-gridlines",
+      "borders",
+      "highlight-duplicates",
+      "lock-references",
+      "if",
+      "and",
+      "average",
+      "counta",
+      "countifs",
+      "data-form",
+      "go-to-special",
+      "networkdays",
+      "or",
+      "select-row-column",
+      "sort",
+      "sum",
+      "sumif",
+      "sumifs",
+      "trim"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "work out the average score",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "average"
+    ],
+    "returned": [
+      "average",
+      "networkdays",
+      "ifs",
+      "go-to-special",
+      "match",
+      "sort",
+      "sumif",
+      "highlight-duplicates",
+      "create-table",
+      "fill-down",
+      "lock-references",
+      "toggle-gridlines",
+      "filter",
+      "index",
+      "left",
+      "right",
+      "vlookup",
+      "xlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "find the biggest number in a column",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "max"
+    ],
+    "returned": [
+      "max",
+      "match",
+      "average",
+      "min",
+      "go-to-special",
+      "vlookup",
+      "highlight-duplicates",
+      "autosum",
+      "index",
+      "sum",
+      "xlookup",
+      "select-row-column",
+      "sumif",
+      "sumifs",
+      "unique",
+      "round",
+      "countif",
+      "trace-references",
+      "len",
+      "data-form",
+      "fill-down",
+      "jump-to-edge",
+      "filter",
+      "countifs",
+      "lock-references",
+      "sort",
+      "ifna",
+      "counta",
+      "mid"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "mark students as pass or fail",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "if",
+      "ifs"
+    ],
+    "returned": [
+      "if",
+      "highlight-duplicates",
+      "and",
+      "ifna",
+      "trim"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "check if two conditions are both true",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "and"
+    ],
+    "returned": [
+      "and",
+      "or",
+      "if",
+      "ifs",
+      "filter",
+      "countifs",
+      "sumif",
+      "sumifs",
+      "networkdays",
+      "countif",
+      "highlight-duplicates",
+      "index",
+      "len",
+      "go-to-special",
+      "max",
+      "min",
+      "counta",
+      "data-form",
+      "autosum",
+      "iferror",
+      "ifna",
+      "sort",
+      "unique",
+      "vlookup",
+      "sum",
+      "average",
+      "create-table",
+      "textjoin",
+      "borders",
+      "trace-references",
+      "left",
+      "match",
+      "mid",
+      "right",
+      "select-row-column",
+      "toggle-gridlines",
+      "xlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "find the row number of a name in a list",
+    "category": "task",
+    "heldOut": false,
+    "acceptable": [
+      "match"
+    ],
+    "returned": [
+      "match",
+      "go-to-special",
+      "min",
+      "filter",
+      "sort",
+      "textjoin",
+      "unique",
+      "highlight-duplicates",
+      "select-row-column",
+      "jump-to-edge",
+      "autosum",
+      "sum",
+      "data-form",
+      "vlookup",
+      "index",
+      "countif",
+      "average",
+      "max",
+      "sumif",
+      "countifs",
+      "len",
+      "xlookup",
+      "trace-references",
+      "sumifs",
+      "round",
+      "right",
+      "lock-references",
+      "iferror",
+      "ifna",
+      "counta",
+      "mid"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "how many working days until the deadline",
+    "category": "task",
+    "heldOut": true,
+    "acceptable": [
+      "networkdays"
+    ],
+    "returned": [
+      "networkdays",
+      "counta",
+      "countif",
+      "countifs",
+      "lock-references",
+      "create-table",
+      "fill-down",
+      "match",
+      "toggle-gridlines",
+      "sort",
+      "sumif",
+      "data-form",
+      "if",
+      "ifs",
+      "left",
+      "mid",
+      "right",
+      "round"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "count the characters in a cell",
+    "category": "task",
+    "heldOut": true,
+    "acceptable": [
+      "len"
+    ],
+    "returned": [
+      "len",
+      "countif",
+      "counta",
+      "countifs",
+      "left",
+      "mid",
+      "right",
+      "networkdays",
+      "go-to-special",
+      "lock-references",
+      "highlight-duplicates",
+      "fill-down",
+      "trace-references",
+      "borders",
+      "insert-date",
+      "textjoin",
+      "average",
+      "if",
+      "iferror",
+      "sumif",
+      "trim",
+      "sum",
+      "and",
+      "autosum",
+      "create-table",
+      "data-form",
+      "filter",
+      "ifna",
+      "jump-to-edge",
+      "max",
+      "min",
+      "or",
+      "select-row-column",
+      "sort",
+      "sumifs",
+      "unique"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "give a grade for each score range",
+    "category": "task",
+    "heldOut": true,
+    "acceptable": [
+      "ifs",
+      "if"
+    ],
+    "returned": [
+      "ifs",
+      "average",
+      "borders",
+      "unique",
+      "data-form",
+      "toggle-gridlines",
+      "create-table",
+      "sum",
+      "highlight-duplicates",
+      "countif",
+      "index",
+      "go-to-special",
+      "countifs",
+      "match",
+      "sumif",
+      "vlookup",
+      "sort",
+      "xlookup",
+      "iferror",
+      "ifna",
+      "len",
+      "round",
+      "and",
+      "autosum",
+      "counta",
+      "filter",
+      "max",
+      "min",
+      "networkdays",
+      "or",
+      "sumifs",
+      "textjoin"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "take the last 4 digits of an id",
+    "category": "task",
+    "heldOut": true,
+    "acceptable": [
+      "right"
+    ],
+    "returned": [
+      "right",
+      "xlookup",
+      "jump-to-edge",
+      "index",
+      "vlookup",
+      "left",
+      "mid",
+      "countif",
+      "textjoin",
+      "borders",
+      "round",
+      "filter",
+      "highlight-duplicates",
+      "match",
+      "min",
+      "sort",
+      "sum",
+      "unique",
+      "go-to-special",
+      "ifs",
+      "networkdays",
+      "sumif"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "pull a few letters from the middle of a code",
+    "category": "task",
+    "heldOut": true,
+    "acceptable": [
+      "mid"
+    ],
+    "returned": [
+      "left",
+      "mid",
+      "right",
+      "len",
+      "vlookup",
+      "borders",
+      "highlight-duplicates",
+      "trace-references",
+      "lock-references",
+      "toggle-gridlines"
+    ],
+    "rank": 2,
+    "top1": false,
+    "top3": true,
+    "rr": 0.5,
+    "ok": true
+  },
+  {
+    "query": "smallest value in the list",
+    "category": "task",
+    "heldOut": true,
+    "acceptable": [
+      "min"
+    ],
+    "returned": [
+      "min",
+      "match",
+      "highlight-duplicates",
+      "unique",
+      "countif",
+      "sort",
+      "sum",
+      "filter",
+      "jump-to-edge",
+      "right",
+      "textjoin",
+      "if",
+      "index",
+      "max",
+      "sumif",
+      "sumifs",
+      "xlookup",
+      "iferror",
+      "fill-down",
+      "ifna",
+      "vlookup",
+      "go-to-special",
+      "trace-references",
+      "and",
+      "average",
+      "counta",
+      "ifs",
+      "mid",
+      "networkdays",
+      "or",
+      "round"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "total of a column",
+    "category": "task",
+    "heldOut": true,
+    "acceptable": [
+      "sum",
+      "autosum"
+    ],
+    "returned": [
+      "autosum",
+      "sum",
+      "sumifs",
+      "sumif",
+      "select-row-column",
+      "average",
+      "max",
+      "min",
+      "index",
+      "fill-down",
+      "highlight-duplicates",
+      "jump-to-edge",
+      "match",
+      "filter",
+      "vlookup",
+      "and",
+      "counta",
+      "or",
+      "textjoin",
+      "countifs",
+      "data-form",
+      "go-to-special",
+      "lock-references",
+      "sort",
+      "unique",
+      "xlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "count only the cells that have something in them",
+    "category": "task",
+    "heldOut": true,
+    "acceptable": [
+      "counta"
+    ],
+    "returned": [
+      "counta",
+      "countif",
+      "countifs",
+      "len",
+      "sumif",
+      "sumifs",
+      "go-to-special",
+      "networkdays",
+      "filter",
+      "lock-references",
+      "highlight-duplicates",
+      "borders",
+      "trace-references",
+      "and",
+      "textjoin",
+      "fill-down",
+      "unique",
+      "if",
+      "iferror",
+      "insert-date",
+      "average",
+      "left",
+      "mid",
+      "right",
+      "trim",
+      "sum",
+      "data-form",
+      "ifna",
+      "select-row-column",
+      "toggle-gridlines",
+      "ifs",
+      "match",
+      "round",
+      "vlookup",
+      "autosum",
+      "create-table",
+      "jump-to-edge",
+      "max",
+      "min",
+      "or",
+      "sort"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "grand total",
+    "category": "synonym",
+    "heldOut": false,
+    "acceptable": [
+      "sum",
+      "autosum"
+    ],
+    "returned": [
+      "autosum",
+      "sum",
+      "sumifs",
+      "sumif",
+      "ifs",
+      "and",
+      "average",
+      "counta",
+      "max",
+      "min",
+      "or",
+      "textjoin"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "cheapest item",
+    "category": "synonym",
+    "heldOut": false,
+    "acceptable": [
+      "min"
+    ],
+    "returned": [
+      "min",
+      "match",
+      "textjoin"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "most expensive item",
+    "category": "synonym",
+    "heldOut": false,
+    "acceptable": [
+      "max"
+    ],
+    "returned": [
+      "max",
+      "match",
+      "textjoin"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "tidy up text with extra spaces",
+    "category": "synonym",
+    "heldOut": false,
+    "acceptable": [
+      "trim"
+    ],
+    "returned": [
+      "trim",
+      "textjoin",
+      "len",
+      "vlookup",
+      "sum",
+      "sumif",
+      "xlookup",
+      "autosum",
+      "sumifs",
+      "select-row-column",
+      "mid",
+      "go-to-special",
+      "index",
+      "left",
+      "right",
+      "and",
+      "average",
+      "counta",
+      "max",
+      "min",
+      "or",
+      "countifs",
+      "data-form",
+      "ifs",
+      "round",
+      "countif",
+      "if",
+      "ifna",
+      "match",
+      "networkdays"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "bring back a value from another table",
+    "category": "synonym",
+    "heldOut": false,
+    "acceptable": [
+      "xlookup",
+      "vlookup",
+      "index"
+    ],
+    "returned": [
+      "xlookup",
+      "trace-references",
+      "vlookup",
+      "create-table",
+      "sumif",
+      "sumifs",
+      "if",
+      "jump-to-edge",
+      "select-row-column",
+      "highlight-duplicates",
+      "toggle-gridlines",
+      "index",
+      "match",
+      "max",
+      "min",
+      "unique",
+      "iferror",
+      "countif",
+      "fill-down",
+      "ifna",
+      "autosum",
+      "data-form",
+      "and",
+      "average",
+      "counta",
+      "ifs",
+      "mid",
+      "networkdays",
+      "or",
+      "round",
+      "sum"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "mean of a list",
+    "category": "synonym",
+    "heldOut": false,
+    "acceptable": [
+      "average"
+    ],
+    "returned": [
+      "average",
+      "match",
+      "countif",
+      "filter",
+      "highlight-duplicates",
+      "min",
+      "sort",
+      "sum",
+      "unique",
+      "jump-to-edge",
+      "right",
+      "textjoin",
+      "index",
+      "vlookup",
+      "go-to-special",
+      "trace-references"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "glue names together",
+    "category": "synonym",
+    "heldOut": true,
+    "acceptable": [
+      "textjoin"
+    ],
+    "returned": [
+      "sum",
+      "textjoin",
+      "borders",
+      "go-to-special",
+      "iferror",
+      "len"
+    ],
+    "rank": 2,
+    "top1": false,
+    "top3": true,
+    "rr": 0.5,
+    "ok": true
+  },
+  {
+    "query": "priciest",
+    "category": "synonym",
+    "heldOut": true,
+    "acceptable": [
+      "max"
+    ],
+    "returned": [],
+    "rank": null,
+    "top1": false,
+    "top3": false,
+    "rr": 0,
+    "ok": false
+  },
+  {
+    "query": "drop repeated entries",
+    "category": "synonym",
+    "heldOut": true,
+    "acceptable": [
+      "unique"
+    ],
+    "returned": [
+      "highlight-duplicates",
+      "data-form",
+      "fill-down",
+      "unique",
+      "counta",
+      "textjoin"
+    ],
+    "rank": 4,
+    "top1": false,
+    "top3": false,
+    "rr": 0.25,
+    "ok": false
+  },
+  {
+    "query": "discard #n/a",
+    "category": "synonym",
+    "heldOut": true,
+    "acceptable": [
+      "ifna",
+      "iferror"
+    ],
+    "returned": [
+      "ifna",
+      "iferror",
+      "borders",
+      "ifs",
+      "match",
+      "xlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "xlokup",
+    "category": "typo",
+    "heldOut": false,
+    "acceptable": [
+      "xlookup"
+    ],
+    "returned": [
+      "xlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "vlokup",
+    "category": "typo",
+    "heldOut": false,
+    "acceptable": [
+      "vlookup"
+    ],
+    "returned": [
+      "vlookup",
+      "xlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "sumfs",
+    "category": "typo",
+    "heldOut": false,
+    "acceptable": [
+      "sumif",
+      "sumifs"
+    ],
+    "returned": [
+      "sumif",
+      "sumifs"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "textjion",
+    "category": "typo",
+    "heldOut": false,
+    "acceptable": [
+      "textjoin"
+    ],
+    "returned": [
+      "textjoin"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "iferorr",
+    "category": "typo",
+    "heldOut": false,
+    "acceptable": [
+      "iferror"
+    ],
+    "returned": [
+      "iferror"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "countiff",
+    "category": "typo",
+    "heldOut": false,
+    "acceptable": [
+      "countif",
+      "countifs"
+    ],
+    "returned": [
+      "countif",
+      "countifs"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "unqiue",
+    "category": "typo",
+    "heldOut": true,
+    "acceptable": [
+      "unique"
+    ],
+    "returned": [
+      "unique"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "averge",
+    "category": "typo",
+    "heldOut": true,
+    "acceptable": [
+      "average"
+    ],
+    "returned": [
+      "average"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "networkdys",
+    "category": "typo",
+    "heldOut": true,
+    "acceptable": [
+      "networkdays"
+    ],
+    "returned": [
+      "networkdays"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "lookups",
+    "category": "word-form",
+    "heldOut": false,
+    "acceptable": [
+      "xlookup",
+      "vlookup"
+    ],
+    "returned": [
+      "vlookup",
+      "xlookup",
+      "ifna",
+      "index",
+      "trim",
+      "if",
+      "iferror",
+      "match"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "sorting a list",
+    "category": "word-form",
+    "heldOut": false,
+    "acceptable": [
+      "sort"
+    ],
+    "returned": [
+      "sort",
+      "match",
+      "countif",
+      "filter",
+      "highlight-duplicates",
+      "min",
+      "sum",
+      "unique",
+      "jump-to-edge",
+      "right",
+      "textjoin",
+      "index",
+      "vlookup",
+      "xlookup",
+      "go-to-special",
+      "trace-references"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "copying formulas down",
+    "category": "word-form",
+    "heldOut": false,
+    "acceptable": [
+      "fill-down"
+    ],
+    "returned": [
+      "fill-down",
+      "go-to-special",
+      "trace-references",
+      "lock-references",
+      "autosum",
+      "filter",
+      "sort",
+      "iferror",
+      "borders",
+      "round",
+      "average",
+      "counta",
+      "data-form",
+      "ifna",
+      "networkdays"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "highlighting duplicates",
+    "category": "word-form",
+    "heldOut": false,
+    "acceptable": [
+      "highlight-duplicates"
+    ],
+    "returned": [
+      "highlight-duplicates",
+      "unique",
+      "select-row-column",
+      "countif",
+      "fill-down",
+      "autosum"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "rounded numbers",
+    "category": "word-form",
+    "heldOut": true,
+    "acceptable": [
+      "round"
+    ],
+    "returned": [
+      "round",
+      "go-to-special",
+      "match",
+      "autosum",
+      "average",
+      "max",
+      "min",
+      "sum",
+      "borders",
+      "ifna",
+      "sumif",
+      "sumifs",
+      "counta",
+      "countifs",
+      "filter",
+      "lock-references",
+      "mid",
+      "sort",
+      "vlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "counted cells",
+    "category": "word-form",
+    "heldOut": true,
+    "acceptable": [
+      "countif",
+      "counta",
+      "countifs"
+    ],
+    "returned": [
+      "counta",
+      "countif",
+      "countifs",
+      "len",
+      "networkdays",
+      "go-to-special",
+      "lock-references",
+      "highlight-duplicates",
+      "fill-down",
+      "trace-references",
+      "borders",
+      "insert-date",
+      "textjoin",
+      "average",
+      "if",
+      "iferror",
+      "left",
+      "mid",
+      "right",
+      "sum",
+      "and",
+      "autosum",
+      "create-table",
+      "data-form",
+      "filter",
+      "ifna",
+      "jump-to-edge",
+      "max",
+      "min",
+      "or",
+      "select-row-column",
+      "sort",
+      "sumif",
+      "sumifs",
+      "trim",
+      "unique"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "filtered rows",
+    "category": "word-form",
+    "heldOut": true,
+    "acceptable": [
+      "filter"
+    ],
+    "returned": [
+      "filter",
+      "select-row-column",
+      "data-form",
+      "jump-to-edge",
+      "match",
+      "autosum",
+      "countifs",
+      "index",
+      "sort",
+      "sumif",
+      "go-to-special",
+      "lock-references",
+      "sumifs",
+      "unique",
+      "vlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "quick access toolbar",
+    "category": "body-text",
+    "heldOut": false,
+    "acceptable": [
+      "data-form"
+    ],
+    "returned": [
+      "data-form"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "arrows",
+    "category": "body-text",
+    "heldOut": false,
+    "acceptable": [
+      "trace-references"
+    ],
+    "returned": [
+      "jump-to-edge",
+      "data-form",
+      "trace-references"
+    ],
+    "rank": 3,
+    "top1": false,
+    "top3": true,
+    "rr": 0.3333333333333333,
+    "ok": true
+  },
+  {
+    "query": "non-breaking space",
+    "category": "body-text",
+    "heldOut": false,
+    "acceptable": [
+      "trim"
+    ],
+    "returned": [
+      "trim",
+      "counta",
+      "select-row-column",
+      "ifs",
+      "len",
+      "vlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "approximate match",
+    "category": "body-text",
+    "heldOut": false,
+    "acceptable": [
+      "vlookup",
+      "xlookup",
+      "match"
+    ],
+    "returned": [
+      "vlookup",
+      "match",
+      "index",
+      "xlookup",
+      "countif",
+      "countifs",
+      "sumif",
+      "sumifs",
+      "filter",
+      "ifna",
+      "borders",
+      "go-to-special",
+      "highlight-duplicates",
+      "ifs",
+      "toggle-gridlines"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "spill",
+    "category": "body-text",
+    "heldOut": false,
+    "acceptable": [
+      "unique",
+      "filter",
+      "sort"
+    ],
+    "returned": [
+      "filter",
+      "sort",
+      "unique"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "key tips",
+    "category": "body-text",
+    "heldOut": true,
+    "acceptable": [
+      "toggle-gridlines",
+      "borders",
+      "highlight-duplicates"
+    ],
+    "returned": [
+      "jump-to-edge",
+      "borders",
+      "highlight-duplicates",
+      "toggle-gridlines",
+      "data-form"
+    ],
+    "rank": 2,
+    "top1": false,
+    "top3": true,
+    "rr": 0.5,
+    "ok": true
+  },
+  {
+    "query": "wildcards",
+    "category": "body-text",
+    "heldOut": true,
+    "acceptable": [
+      "match",
+      "xlookup"
+    ],
+    "returned": [
+      "match",
+      "sumif",
+      "xlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "jump to the bottom of a column",
+    "category": "tip",
+    "heldOut": false,
+    "acceptable": [
+      "jump-to-edge"
+    ],
+    "returned": [
+      "jump-to-edge",
+      "trace-references",
+      "select-row-column",
+      "autosum",
+      "index",
+      "data-form",
+      "average",
+      "fill-down",
+      "highlight-duplicates",
+      "match",
+      "max",
+      "min",
+      "sum",
+      "sumif",
+      "sumifs",
+      "filter",
+      "vlookup",
+      "countifs",
+      "go-to-special",
+      "lock-references",
+      "sort",
+      "unique",
+      "xlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "select a whole row",
+    "category": "tip",
+    "heldOut": false,
+    "acceptable": [
+      "select-row-column"
+    ],
+    "returned": [
+      "select-row-column",
+      "go-to-special",
+      "data-form",
+      "jump-to-edge",
+      "index",
+      "filter",
+      "round",
+      "match",
+      "autosum",
+      "countifs",
+      "sort",
+      "trace-references",
+      "sumif",
+      "borders",
+      "fill-down",
+      "highlight-duplicates",
+      "toggle-gridlines",
+      "lock-references",
+      "sumifs",
+      "unique",
+      "vlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "hide the gridlines",
+    "category": "tip",
+    "heldOut": false,
+    "acceptable": [
+      "toggle-gridlines"
+    ],
+    "returned": [
+      "toggle-gridlines",
+      "iferror",
+      "ifna",
+      "borders",
+      "select-row-column"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "add borders around cells",
+    "category": "tip",
+    "heldOut": false,
+    "acceptable": [
+      "borders"
+    ],
+    "returned": [
+      "borders",
+      "lock-references",
+      "sum",
+      "autosum",
+      "data-form",
+      "sumif",
+      "sumifs",
+      "sort",
+      "go-to-special",
+      "counta",
+      "fill-down",
+      "trace-references",
+      "ifs",
+      "round",
+      "countif",
+      "insert-date",
+      "textjoin",
+      "highlight-duplicates",
+      "if",
+      "iferror",
+      "left",
+      "len",
+      "mid",
+      "right",
+      "filter",
+      "jump-to-edge",
+      "networkdays",
+      "average",
+      "countifs",
+      "vlookup",
+      "and",
+      "create-table",
+      "ifna",
+      "max",
+      "min",
+      "or",
+      "select-row-column",
+      "trim",
+      "unique"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "colour repeated values",
+    "category": "tip",
+    "heldOut": false,
+    "acceptable": [
+      "highlight-duplicates"
+    ],
+    "returned": [
+      "highlight-duplicates",
+      "fill-down",
+      "if",
+      "index",
+      "match",
+      "max",
+      "min",
+      "sumif",
+      "sumifs",
+      "unique",
+      "xlookup",
+      "iferror",
+      "countif",
+      "trace-references",
+      "textjoin",
+      "ifna",
+      "vlookup",
+      "and",
+      "average",
+      "counta",
+      "ifs",
+      "mid",
+      "networkdays",
+      "or",
+      "round",
+      "sum"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "add up a column quickly",
+    "category": "tip",
+    "heldOut": false,
+    "acceptable": [
+      "autosum",
+      "sum"
+    ],
+    "returned": [
+      "autosum",
+      "sum",
+      "sumif",
+      "sumifs",
+      "jump-to-edge",
+      "data-form",
+      "borders",
+      "vlookup",
+      "insert-date",
+      "index",
+      "select-row-column",
+      "lock-references",
+      "xlookup",
+      "average",
+      "max",
+      "min",
+      "trim",
+      "fill-down",
+      "highlight-duplicates",
+      "match",
+      "countifs",
+      "filter",
+      "sort",
+      "networkdays",
+      "and",
+      "counta",
+      "ifs",
+      "or",
+      "round",
+      "textjoin",
+      "go-to-special",
+      "unique"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "lock a cell reference in a formula",
+    "category": "tip",
+    "heldOut": false,
+    "acceptable": [
+      "lock-references"
+    ],
+    "returned": [
+      "lock-references",
+      "trace-references",
+      "go-to-special",
+      "fill-down",
+      "autosum",
+      "counta",
+      "filter",
+      "sort",
+      "countif",
+      "iferror",
+      "index",
+      "vlookup",
+      "xlookup",
+      "borders",
+      "insert-date",
+      "textjoin",
+      "highlight-duplicates",
+      "if",
+      "left",
+      "len",
+      "mid",
+      "right",
+      "average",
+      "sumif",
+      "data-form",
+      "ifna",
+      "networkdays",
+      "sum",
+      "and",
+      "create-table",
+      "jump-to-edge",
+      "max",
+      "min",
+      "or",
+      "select-row-column",
+      "sumifs",
+      "trim",
+      "unique"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "turn data into a table",
+    "category": "tip",
+    "heldOut": false,
+    "acceptable": [
+      "create-table"
+    ],
+    "returned": [
+      "create-table",
+      "jump-to-edge",
+      "data-form",
+      "toggle-gridlines",
+      "vlookup",
+      "xlookup",
+      "select-row-column",
+      "borders",
+      "filter",
+      "trace-references",
+      "sort",
+      "trim",
+      "if",
+      "go-to-special",
+      "index"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "select all the blank cells",
+    "category": "tip",
+    "heldOut": false,
+    "acceptable": [
+      "go-to-special"
+    ],
+    "returned": [
+      "go-to-special",
+      "select-row-column",
+      "counta",
+      "borders",
+      "iferror",
+      "trace-references",
+      "fill-down",
+      "lock-references",
+      "data-form",
+      "and",
+      "highlight-duplicates",
+      "left",
+      "right",
+      "countif",
+      "insert-date",
+      "textjoin",
+      "if",
+      "len",
+      "mid",
+      "countifs",
+      "jump-to-edge",
+      "max",
+      "min",
+      "or",
+      "average",
+      "sum",
+      "toggle-gridlines",
+      "autosum",
+      "create-table",
+      "filter",
+      "ifna",
+      "networkdays",
+      "sort",
+      "sumif",
+      "sumifs",
+      "trim",
+      "unique"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "copy a formula down a column",
+    "category": "tip",
+    "heldOut": true,
+    "acceptable": [
+      "fill-down"
+    ],
+    "returned": [
+      "fill-down",
+      "go-to-special",
+      "lock-references",
+      "autosum",
+      "trace-references",
+      "select-row-column",
+      "filter",
+      "sort",
+      "average",
+      "index",
+      "highlight-duplicates",
+      "jump-to-edge",
+      "match",
+      "max",
+      "min",
+      "sum",
+      "sumif",
+      "sumifs",
+      "iferror",
+      "data-form",
+      "borders",
+      "round",
+      "vlookup",
+      "counta",
+      "ifna",
+      "networkdays",
+      "countifs",
+      "unique",
+      "xlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "put todays date in a cell",
+    "category": "tip",
+    "heldOut": true,
+    "acceptable": [
+      "insert-date"
+    ],
+    "returned": [
+      "insert-date",
+      "networkdays",
+      "borders",
+      "lock-references",
+      "go-to-special",
+      "counta",
+      "fill-down",
+      "trace-references",
+      "countif",
+      "textjoin",
+      "highlight-duplicates",
+      "if",
+      "iferror",
+      "left",
+      "len",
+      "mid",
+      "right",
+      "sumif",
+      "vlookup",
+      "ifs",
+      "average",
+      "sum",
+      "and",
+      "autosum",
+      "create-table",
+      "data-form",
+      "filter",
+      "ifna",
+      "jump-to-edge",
+      "max",
+      "min",
+      "or",
+      "select-row-column",
+      "sort",
+      "sumifs",
+      "trim",
+      "unique"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "switch between a formula and its references",
+    "category": "tip",
+    "heldOut": true,
+    "acceptable": [
+      "trace-references"
+    ],
+    "returned": [
+      "trace-references",
+      "lock-references",
+      "go-to-special",
+      "autosum",
+      "fill-down",
+      "filter",
+      "sort",
+      "iferror",
+      "toggle-gridlines",
+      "countif",
+      "sumif",
+      "average",
+      "counta",
+      "data-form",
+      "ifna",
+      "networkdays"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "select only the numbers in a range",
+    "category": "tip",
+    "heldOut": true,
+    "acceptable": [
+      "go-to-special"
+    ],
+    "returned": [
+      "go-to-special",
+      "select-row-column",
+      "sum",
+      "filter",
+      "sumif",
+      "match",
+      "average",
+      "round",
+      "autosum",
+      "max",
+      "min",
+      "and",
+      "borders",
+      "unique",
+      "sumifs",
+      "trace-references",
+      "highlight-duplicates",
+      "ifs",
+      "create-table",
+      "data-form",
+      "fill-down",
+      "counta",
+      "vlookup",
+      "sort",
+      "countif",
+      "trim",
+      "countifs",
+      "index",
+      "xlookup",
+      "jump-to-edge",
+      "toggle-gridlines",
+      "lock-references",
+      "mid",
+      "iferror",
+      "ifna",
+      "networkdays",
+      "or",
+      "textjoin"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "enter records using a form",
+    "category": "tip",
+    "heldOut": true,
+    "acceptable": [
+      "data-form"
+    ],
+    "returned": [
+      "data-form",
+      "trace-references",
+      "insert-date",
+      "select-row-column",
+      "autosum",
+      "lock-references",
+      "networkdays"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "move to the end of the data",
+    "category": "tip",
+    "heldOut": true,
+    "acceptable": [
+      "jump-to-edge"
+    ],
+    "returned": [
+      "jump-to-edge",
+      "trace-references",
+      "data-form",
+      "right",
+      "create-table",
+      "borders",
+      "filter",
+      "sort",
+      "trim",
+      "vlookup",
+      "xlookup",
+      "ifs",
+      "mid",
+      "networkdays",
+      "go-to-special",
+      "index",
+      "select-row-column"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "lookup",
+    "category": "ambiguous",
+    "heldOut": false,
+    "acceptable": [
+      "xlookup",
+      "vlookup",
+      "index",
+      "match"
+    ],
+    "returned": [
+      "vlookup",
+      "xlookup",
+      "ifna",
+      "trim",
+      "index",
+      "if",
+      "iferror",
+      "match"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "count",
+    "category": "ambiguous",
+    "heldOut": false,
+    "acceptable": [
+      "countif",
+      "countifs",
+      "counta"
+    ],
+    "returned": [
+      "countif",
+      "countifs",
+      "counta",
+      "len",
+      "networkdays",
+      "average",
+      "highlight-duplicates"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "sum",
+    "category": "ambiguous",
+    "heldOut": false,
+    "acceptable": [
+      "sum",
+      "sumif",
+      "sumifs",
+      "autosum"
+    ],
+    "returned": [
+      "sum",
+      "sumifs",
+      "autosum",
+      "sumif"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "duplicates",
+    "category": "ambiguous",
+    "heldOut": false,
+    "acceptable": [
+      "unique",
+      "countif",
+      "highlight-duplicates"
+    ],
+    "returned": [
+      "highlight-duplicates",
+      "unique",
+      "countif",
+      "fill-down"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "error",
+    "category": "ambiguous",
+    "heldOut": true,
+    "acceptable": [
+      "iferror",
+      "ifna"
+    ],
+    "returned": [
+      "iferror",
+      "ifna",
+      "average",
+      "counta",
+      "filter",
+      "trace-references",
+      "sum",
+      "sumifs",
+      "unique"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "date",
+    "category": "ambiguous",
+    "heldOut": true,
+    "acceptable": [
+      "networkdays",
+      "insert-date"
+    ],
+    "returned": [
+      "insert-date",
+      "networkdays",
+      "vlookup"
+    ],
+    "rank": 1,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "zzzzqq",
+    "category": "no-result",
+    "heldOut": false,
+    "acceptable": [],
+    "returned": [],
+    "rank": null,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "banana bread recipe",
+    "category": "no-result",
+    "heldOut": false,
+    "acceptable": [],
+    "returned": [],
+    "rank": null,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "pivot table",
+    "category": "no-result",
+    "heldOut": false,
+    "acceptable": [],
+    "returned": [
+      "create-table",
+      "vlookup",
+      "jump-to-edge",
+      "select-row-column",
+      "xlookup",
+      "data-form",
+      "if"
+    ],
+    "rank": null,
+    "top1": false,
+    "top3": false,
+    "rr": 0,
+    "ok": false
+  },
+  {
+    "query": "vba macro",
+    "category": "no-result",
+    "heldOut": false,
+    "acceptable": [],
+    "returned": [],
+    "rank": null,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "weather forecast",
+    "category": "no-result",
+    "heldOut": true,
+    "acceptable": [],
+    "returned": [],
+    "rank": null,
+    "top1": true,
+    "top3": true,
+    "rr": 1,
+    "ok": true
+  },
+  {
+    "query": "power query",
+    "category": "no-result",
+    "heldOut": true,
+    "acceptable": [],
+    "returned": [
+      "filter"
+    ],
+    "rank": null,
+    "top1": false,
+    "top3": false,
+    "rr": 0,
+    "ok": false
+  }
+]

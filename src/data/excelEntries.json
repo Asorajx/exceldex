@@ -1,0 +1,3038 @@
+[
+  {
+    "id": "xlookup",
+    "title": "XLOOKUP",
+    "category": "function",
+    "topic": "Lookup",
+    "description": "Looks up a value in one range and returns the matching value from another range.",
+    "syntax": "=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])",
+    "arguments": [
+      {
+        "name": "lookup_value",
+        "description": "The value to search for.",
+        "optional": false
+      },
+      {
+        "name": "lookup_array",
+        "description": "The range or array to search in.",
+        "optional": false
+      },
+      {
+        "name": "return_array",
+        "description": "The range or array to return a value from.",
+        "optional": false
+      },
+      {
+        "name": "if_not_found",
+        "description": "Text to return when no match is found. If left out, #N/A is returned.",
+        "optional": true,
+        "defaultValue": "\"Not found\"",
+        "clause": "If there is no match, it shows {if_not_found} instead of #N/A."
+      },
+      {
+        "name": "match_mode",
+        "description": "How to match: 0 exact (default), -1 exact or next smaller, 1 exact or next larger, 2 wildcard match.",
+        "optional": true,
+        "defaultValue": "0",
+        "clause": "A match_mode of {match_mode} sets how close a match must be (0 means exact)."
+      },
+      {
+        "name": "search_mode",
+        "description": "Search direction: 1 first to last (default), -1 last to first, 2 binary search on data sorted ascending, -2 binary search on data sorted descending.",
+        "optional": true,
+        "defaultValue": "1",
+        "clause": "A search_mode of {search_mode} sets the direction (1 searches first to last, -1 last to first)."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=XLOOKUP(E2, A2:A5, B2:B5)",
+        "result": "Chloe Tan",
+        "sheet": [
+          [
+            "ID",
+            "Name",
+            "Department",
+            "",
+            "ID to find"
+          ],
+          [
+            "E101",
+            "Ana Lim",
+            "Sales",
+            "",
+            "E103"
+          ],
+          [
+            "E102",
+            "Ben Ortiz",
+            "Finance"
+          ],
+          [
+            "E103",
+            "Chloe Tan",
+            "HR"
+          ],
+          [
+            "E104",
+            "Dev Patel",
+            "Sales"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "lookup",
+      "search",
+      "find",
+      "match",
+      "retrieve",
+      "vlookup replacement"
+    ],
+    "taskPhrases": [
+      "find employee information using an id",
+      "find employee by id",
+      "retrieve matching data from another table",
+      "look up a value in a table",
+      "get value from another sheet"
+    ],
+    "notes": [
+      "Available in Microsoft 365, Excel 2021 and Excel 2024. Microsoft notes it is not available in Excel 2016 or 2019.",
+      "Unlike VLOOKUP, the return column can be on either side of the lookup column, and return_array can span several columns to return more than one field."
+    ],
+    "relatedEntryIds": [
+      "vlookup",
+      "index"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/xlookup-function",
+    "lastVerified": "2026-11-13",
+    "explanation": "Looks for {lookup_value} in {lookup_array} and returns the value in the same position from {return_array}."
+  },
+  {
+    "id": "vlookup",
+    "title": "VLOOKUP",
+    "category": "function",
+    "topic": "Lookup",
+    "description": "Looks up a value in the first column of a table and returns a value from a column to the right.",
+    "syntax": "=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])",
+    "arguments": [
+      {
+        "name": "lookup_value",
+        "description": "The value to find in the first column of the table.",
+        "optional": false
+      },
+      {
+        "name": "table_array",
+        "description": "The table to search. The lookup column must be its first column.",
+        "optional": false
+      },
+      {
+        "name": "col_index_num",
+        "description": "Which column of the table to return (1 = first column).",
+        "optional": false
+      },
+      {
+        "name": "range_lookup",
+        "description": "Use FALSE for an exact match. TRUE (default) assumes sorted data and finds an approximate match.",
+        "optional": true,
+        "defaultValue": "FALSE",
+        "clause": "A range_lookup of {range_lookup} sets the match type: FALSE needs an exact match, TRUE finds the closest value (the first column must be sorted)."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=VLOOKUP(E2, A2:C5, 3, FALSE)",
+        "result": "8.90",
+        "sheet": [
+          [
+            "Code",
+            "Product",
+            "Price",
+            "",
+            "Code to find"
+          ],
+          [
+            "P-10",
+            "Notebook",
+            "4.50",
+            "",
+            "P-12"
+          ],
+          [
+            "P-11",
+            "Pen",
+            "1.20"
+          ],
+          [
+            "P-12",
+            "Stapler",
+            "8.90"
+          ],
+          [
+            "P-13",
+            "Folder",
+            "2.40"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "lookup",
+      "vertical lookup",
+      "search",
+      "find",
+      "match",
+      "retrieve"
+    ],
+    "taskPhrases": [
+      "find employee information using an id",
+      "find employee by id",
+      "retrieve matching data from another table",
+      "look up a price from a product code"
+    ],
+    "notes": [
+      "Leaving out FALSE means an approximate match, which assumes the first column is sorted and can give wrong results. Add FALSE for an exact match.",
+      "It can only look to the right of the lookup column. Use XLOOKUP, or INDEX with MATCH, to look left.",
+      "If col_index_num is larger than the number of columns in table_array, you get #REF!.",
+      "Numbers or dates stored as text, and stray spaces, can cause wrong results. TRIM can help with spaces."
+    ],
+    "relatedEntryIds": [
+      "xlookup",
+      "index"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/vlookup-function",
+    "lastVerified": "2026-11-13",
+    "explanation": "Looks for {lookup_value} in the first column of {table_array} and returns the value from column {col_index_num} of that row."
+  },
+  {
+    "id": "index",
+    "title": "INDEX",
+    "category": "function",
+    "topic": "Lookup",
+    "description": "Returns the value at a given row and column position within a range. Often combined with MATCH for flexible lookups.",
+    "syntax": "=INDEX(array, row_num, [column_num])",
+    "arguments": [
+      {
+        "name": "array",
+        "description": "The range to return a value from.",
+        "optional": false
+      },
+      {
+        "name": "row_num",
+        "description": "The row to return a value from. Required unless column_num is given.",
+        "optional": false
+      },
+      {
+        "name": "column_num",
+        "description": "The column to return a value from.",
+        "optional": true,
+        "defaultValue": "1",
+        "clause": "It reads column {column_num} of that row."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=INDEX(A2:A5, MATCH(E2, C2:C5, 0))",
+        "result": "Chloe Tan",
+        "sheet": [
+          [
+            "Name",
+            "Department",
+            "ID",
+            "",
+            "ID to find"
+          ],
+          [
+            "Ana Lim",
+            "Sales",
+            "E101",
+            "",
+            "E103"
+          ],
+          [
+            "Ben Ortiz",
+            "Finance",
+            "E102"
+          ],
+          [
+            "Chloe Tan",
+            "HR",
+            "E103"
+          ],
+          [
+            "Dev Patel",
+            "Sales",
+            "E104"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "index",
+      "match",
+      "lookup",
+      "position",
+      "left lookup",
+      "two-way lookup"
+    ],
+    "taskPhrases": [
+      "find employee information using an id",
+      "look up a value to the left of the search column",
+      "return the value at a row and column position"
+    ],
+    "notes": [
+      "In the example, MATCH finds the position and INDEX returns the value at that position. The 0 in MATCH means an exact match. If you leave it out, MATCH assumes 1 (approximate, sorted data), which can give wrong results.",
+      "Setting row_num or column_num to 0 returns the whole column or row."
+    ],
+    "relatedEntryIds": [
+      "xlookup",
+      "vlookup"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/index-function-a5dcf0dd-996d-40a4-a822-b56b061328bd",
+    "lastVerified": "2026-11-13",
+    "explanation": "Returns the value from {array} at the position given by {row_num}."
+  },
+  {
+    "id": "if",
+    "title": "IF",
+    "category": "function",
+    "topic": "Logic",
+    "description": "Returns one value if a condition is true and another value if it is false.",
+    "syntax": "=IF(logical_test, value_if_true, [value_if_false])",
+    "arguments": [
+      {
+        "name": "logical_test",
+        "description": "A condition that evaluates to TRUE or FALSE.",
+        "optional": false
+      },
+      {
+        "name": "value_if_true",
+        "description": "Result when the condition is TRUE.",
+        "optional": false
+      },
+      {
+        "name": "value_if_false",
+        "description": "Result when the condition is FALSE.",
+        "optional": true,
+        "defaultValue": "\"No\"",
+        "clause": "If it is not, it shows {value_if_false}."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=IF(B2>=50, \"Pass\", \"Fail\")",
+        "result": "Pass",
+        "sheet": [
+          [
+            "Student",
+            "Score"
+          ],
+          [
+            "Ana",
+            "72"
+          ],
+          [
+            "Ben",
+            "45"
+          ],
+          [
+            "Chloe",
+            "88"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "if",
+      "condition",
+      "conditional",
+      "logic",
+      "true false",
+      "pass fail",
+      "else"
+    ],
+    "taskPhrases": [
+      "show a different result depending on a value",
+      "label cells based on a condition",
+      "if this then that"
+    ],
+    "notes": [
+      "Text results must be in double quotes (TRUE and FALSE do not need them).",
+      "If value_if_true or value_if_false is left empty, the cell can show 0.",
+      "Many nested IFs get hard to read. Consider IFS or a lookup table instead."
+    ],
+    "relatedEntryIds": [
+      "iferror",
+      "ifs"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/if-function",
+    "lastVerified": "2026-11-13",
+    "explanation": "Checks whether {logical_test} is true. If it is, it shows {value_if_true}."
+  },
+  {
+    "id": "iferror",
+    "title": "IFERROR",
+    "category": "function",
+    "topic": "Logic",
+    "description": "Returns a custom value when a formula results in an error, otherwise returns the formula's result.",
+    "syntax": "=IFERROR(value, value_if_error)",
+    "arguments": [
+      {
+        "name": "value",
+        "description": "The formula or value to check for an error.",
+        "optional": false
+      },
+      {
+        "name": "value_if_error",
+        "description": "What to return if the formula produces an error.",
+        "optional": false
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=IFERROR(VLOOKUP(E2, A2:C5, 3, FALSE), \"Not found\")",
+        "result": "Not found",
+        "sheet": [
+          [
+            "Code",
+            "Product",
+            "Price",
+            "",
+            "Code to find"
+          ],
+          [
+            "P-10",
+            "Notebook",
+            "4.50",
+            "",
+            "P-99"
+          ],
+          [
+            "P-11",
+            "Pen",
+            "1.20"
+          ],
+          [
+            "P-12",
+            "Stapler",
+            "8.90"
+          ],
+          [
+            "P-13",
+            "Folder",
+            "2.40"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "error",
+      "iferror",
+      "na",
+      "hide error",
+      "#n/a",
+      "#div/0",
+      "#value"
+    ],
+    "taskPhrases": [
+      "hide error messages in cells",
+      "replace #n/a with blank",
+      "show a friendly message instead of an error",
+      "avoid divide by zero error"
+    ],
+    "notes": [
+      "It hides all seven error types: #N/A, #VALUE!, #REF!, #DIV/0!, #NUM!, #NAME? and #NULL!. That includes real mistakes in your formula.",
+      "To hide only #N/A, use IFNA. For lookups, XLOOKUP also has its own if_not_found argument."
+    ],
+    "relatedEntryIds": [
+      "if",
+      "xlookup",
+      "ifna"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/iferror-function",
+    "lastVerified": "2026-11-13",
+    "explanation": "Calculates {value}. If that gives an error, it shows {value_if_error} instead."
+  },
+  {
+    "id": "sumifs",
+    "title": "SUMIFS",
+    "category": "function",
+    "topic": "Math",
+    "description": "Adds up values that meet one or more conditions.",
+    "syntax": "=SUMIFS(sum_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)",
+    "arguments": [
+      {
+        "name": "sum_range",
+        "description": "The cells to add up.",
+        "optional": false
+      },
+      {
+        "name": "criteria_range1",
+        "description": "The range to test against the first condition.",
+        "optional": false
+      },
+      {
+        "name": "criteria1",
+        "description": "The first condition, such as \"North\" or \">100\".",
+        "optional": false
+      },
+      {
+        "name": "criteria_range2",
+        "description": "A second range to test, if you need another condition. You can keep adding range and condition pairs.",
+        "optional": true,
+        "defaultValue": "B2:B5",
+        "clause": "It also requires {criteria_range2} to match {criteria2}."
+      },
+      {
+        "name": "criteria2",
+        "description": "The second condition, matched against criteria_range2.",
+        "optional": true,
+        "defaultValue": "\"Jan\""
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=SUMIFS(C2:C5, A2:A5, \"North\")",
+        "result": "330",
+        "sheet": [
+          [
+            "Region",
+            "Month",
+            "Amount"
+          ],
+          [
+            "North",
+            "Jan",
+            "120"
+          ],
+          [
+            "South",
+            "Jan",
+            "80"
+          ],
+          [
+            "North",
+            "Feb",
+            "150"
+          ],
+          [
+            "North",
+            "Jan",
+            "60"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "sum",
+      "total",
+      "add up",
+      "conditional sum",
+      "sumif",
+      "multiple conditions"
+    ],
+    "taskPhrases": [
+      "add up values that match a condition",
+      "total sales for a region",
+      "sum numbers if another column equals something",
+      "sum with multiple criteria"
+    ],
+    "notes": [
+      "The argument order differs from SUMIF: sum_range is first in SUMIFS but third in SUMIF. This is a common source of errors.",
+      "Every criteria range must have the same number of rows and columns as sum_range.",
+      "You can use up to 127 range and criteria pairs."
+    ],
+    "relatedEntryIds": [
+      "countif",
+      "sumif"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/sumifs-function",
+    "lastVerified": "2026-11-13",
+    "explanation": "Adds up the values in {sum_range} where {criteria_range1} matches {criteria1}."
+  },
+  {
+    "id": "countif",
+    "title": "COUNTIF",
+    "category": "function",
+    "topic": "Math",
+    "description": "Counts the cells in a range that meet a single condition.",
+    "syntax": "=COUNTIF(range, criteria)",
+    "arguments": [
+      {
+        "name": "range",
+        "description": "The cells to check.",
+        "optional": false
+      },
+      {
+        "name": "criteria",
+        "description": "The condition, such as \"Done\", \">10\", or a cell reference.",
+        "optional": false
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=COUNTIF(B2:B5, \"Done\")",
+        "result": "3",
+        "sheet": [
+          [
+            "Task",
+            "Status"
+          ],
+          [
+            "Report",
+            "Done"
+          ],
+          [
+            "Invoice",
+            "Pending"
+          ],
+          [
+            "Email",
+            "Done"
+          ],
+          [
+            "Budget",
+            "Done"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "count",
+      "tally",
+      "duplicates",
+      "how many",
+      "occurrences",
+      "countifs"
+    ],
+    "taskPhrases": [
+      "count how many cells match a condition",
+      "count completed tasks",
+      "find duplicates in a list",
+      "count how many times a value appears"
+    ],
+    "notes": [
+      "It takes only one condition. For more than one, use COUNTIFS.",
+      "It is not case-sensitive, so \"done\" and \"DONE\" match.",
+      "In criteria, ? matches one character, * matches any run of characters, and ~ before them matches the symbol itself.",
+      "Text criteria longer than 255 characters can give wrong results."
+    ],
+    "relatedEntryIds": [
+      "sumifs",
+      "counta"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/get-started/use-the-countif-function-in-microsoft-excel",
+    "lastVerified": "2026-11-13",
+    "explanation": "Counts the cells in {range} that match {criteria}."
+  },
+  {
+    "id": "trim",
+    "title": "TRIM",
+    "category": "function",
+    "topic": "Text",
+    "description": "Removes extra spaces from text, leaving only single spaces between words.",
+    "syntax": "=TRIM(text)",
+    "arguments": [
+      {
+        "name": "text",
+        "description": "The text or cell to clean.",
+        "optional": false
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=TRIM(A2)",
+        "result": "Ana Lim",
+        "sheet": [
+          [
+            "Name"
+          ],
+          [
+            "  Ana   Lim "
+          ],
+          [
+            "Ben  Ortiz"
+          ],
+          [
+            " Chloe Tan"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "spaces",
+      "whitespace",
+      "clean",
+      "extra spaces",
+      "trailing",
+      "leading",
+      "remove spaces"
+    ],
+    "taskPhrases": [
+      "remove extra spaces from text",
+      "clean up messy data",
+      "lookup fails because of spaces",
+      "remove leading and trailing spaces"
+    ],
+    "notes": [
+      "TRIM removes the standard space (character 32). It does not remove the non-breaking space (character 160) that often comes from web pages. Replace it first: =TRIM(SUBSTITUTE(A2, CHAR(160), \" \"))."
+    ],
+    "relatedEntryIds": [
+      "textjoin",
+      "len"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/trim-function",
+    "lastVerified": "2026-11-13",
+    "explanation": "Removes extra spaces from {text}, leaving single spaces between words."
+  },
+  {
+    "id": "textjoin",
+    "title": "TEXTJOIN",
+    "category": "function",
+    "topic": "Text",
+    "description": "Combines text from multiple cells using a delimiter, optionally skipping empty cells.",
+    "syntax": "=TEXTJOIN(delimiter, ignore_empty, text1, [text2], ...)",
+    "arguments": [
+      {
+        "name": "delimiter",
+        "description": "The separator between items: text in double quotes such as \", \" or \" \", or an empty string.",
+        "optional": false
+      },
+      {
+        "name": "ignore_empty",
+        "description": "TRUE skips empty cells. FALSE includes them, which can leave repeated separators.",
+        "optional": false
+      },
+      {
+        "name": "text1",
+        "description": "The first cell, range or text to join.",
+        "optional": false
+      },
+      {
+        "name": "text2",
+        "description": "More text or ranges to join. You can use up to 252 text items in total.",
+        "optional": true,
+        "defaultValue": "B2",
+        "clause": "It also joins {text2}."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=TEXTJOIN(\" \", TRUE, A2:B2)",
+        "result": "Ana Lim",
+        "sheet": [
+          [
+            "First",
+            "Last"
+          ],
+          [
+            "Ana",
+            "Lim"
+          ],
+          [
+            "Ben",
+            "Ortiz"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "join",
+      "combine",
+      "concatenate",
+      "merge text",
+      "concat",
+      "delimiter"
+    ],
+    "taskPhrases": [
+      "combine first and last name",
+      "join text from several cells",
+      "merge cells into one with commas",
+      "concatenate with a separator"
+    ],
+    "notes": [
+      "Available in Microsoft 365, Excel 2019, Excel 2021 and Excel 2024, but not Excel 2016."
+    ],
+    "relatedEntryIds": [
+      "trim"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/textjoin-function-357b449a-ec91-49d0-80c3-0e8fc845691c",
+    "lastVerified": "2026-11-13",
+    "explanation": "Joins {text1} into one cell, putting {delimiter} between items (ignore_empty is {ignore_empty}; TRUE skips empty cells)."
+  },
+  {
+    "id": "unique",
+    "title": "UNIQUE",
+    "category": "function",
+    "topic": "Data",
+    "description": "Returns the distinct values from a range, removing duplicates.",
+    "syntax": "=UNIQUE(array, [by_col], [exactly_once])",
+    "arguments": [
+      {
+        "name": "array",
+        "description": "The range to extract unique values from.",
+        "optional": false
+      },
+      {
+        "name": "by_col",
+        "description": "TRUE compares columns and returns unique columns. The default, FALSE, compares rows.",
+        "optional": true,
+        "defaultValue": "FALSE",
+        "clause": "A by_col of {by_col} chooses what to compare: FALSE compares rows, TRUE compares columns."
+      },
+      {
+        "name": "exactly_once",
+        "description": "TRUE returns only values that appear exactly once. The default, FALSE, returns every distinct value.",
+        "optional": true,
+        "defaultValue": "FALSE",
+        "clause": "An exactly_once of {exactly_once} chooses what to keep: TRUE keeps only values that appear exactly once."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=UNIQUE(A2:A7)",
+        "result": "Sales, Finance, HR (one per cell)",
+        "sheet": [
+          [
+            "Department"
+          ],
+          [
+            "Sales"
+          ],
+          [
+            "Finance"
+          ],
+          [
+            "Sales"
+          ],
+          [
+            "HR"
+          ],
+          [
+            "Finance"
+          ],
+          [
+            "Sales"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "unique",
+      "distinct",
+      "duplicates",
+      "remove duplicates",
+      "deduplicate",
+      "dedupe"
+    ],
+    "taskPhrases": [
+      "remove duplicates from a list",
+      "get a list of distinct values",
+      "list each value only once",
+      "find unique entries"
+    ],
+    "notes": [
+      "The result spills into neighbouring cells. If those cells are not empty, Excel shows a #SPILL! error.",
+      "Available in Microsoft 365, Excel 2021 and Excel 2024."
+    ],
+    "relatedEntryIds": [
+      "countif"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/unique-function",
+    "lastVerified": "2026-11-13",
+    "explanation": "Lists each different value in {array} once."
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "sum",
+    "title": "SUM",
+    "topic": "Math",
+    "description": "Adds up numbers, cells or ranges.",
+    "syntax": "=SUM(number1, [number2], ...)",
+    "explanation": "Adds up the numbers in {number1}.",
+    "arguments": [
+      {
+        "name": "number1",
+        "description": "The first number, cell or range to add.",
+        "optional": false
+      },
+      {
+        "name": "number2",
+        "description": "More numbers, cells or ranges to add. You can use up to 255 arguments in total.",
+        "optional": true,
+        "defaultValue": "C2:C5",
+        "clause": "It also adds {number2}."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=SUM(B2:B5)",
+        "result": "59",
+        "sheet": [
+          [
+            "Item",
+            "Jan",
+            "Feb"
+          ],
+          [
+            "Coffee",
+            "4",
+            "6"
+          ],
+          [
+            "Lunch",
+            "12",
+            "10"
+          ],
+          [
+            "Taxi",
+            "18",
+            "15"
+          ],
+          [
+            "Books",
+            "25",
+            "0"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "sum",
+      "total",
+      "add",
+      "add up",
+      "plus",
+      "subtotal"
+    ],
+    "taskPhrases": [
+      "add up a column of numbers",
+      "total a list",
+      "sum a range",
+      "add numbers together",
+      "calculate a total"
+    ],
+    "notes": [
+      "SUM ignores text in the cells it adds, so text does not cause a #VALUE! error the way + can.",
+      "You can use up to 255 arguments.",
+      "To add only the cells that meet a condition, use SUMIFS."
+    ],
+    "relatedEntryIds": [
+      "autosum",
+      "sumifs",
+      "average"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/sum-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "average",
+    "title": "AVERAGE",
+    "topic": "Math",
+    "description": "Returns the average (mean) of numbers, cells or ranges.",
+    "syntax": "=AVERAGE(number1, [number2], ...)",
+    "explanation": "Finds the average of the numbers in {number1}.",
+    "arguments": [
+      {
+        "name": "number1",
+        "description": "The first number, cell or range to average.",
+        "optional": false
+      },
+      {
+        "name": "number2",
+        "description": "More numbers, cells or ranges to include. You can use up to 255 arguments in total.",
+        "optional": true,
+        "defaultValue": "C2:C5",
+        "clause": "It also includes {number2}."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=AVERAGE(B2:B5)",
+        "result": "66.5",
+        "sheet": [
+          [
+            "Student",
+            "Score",
+            "Retake"
+          ],
+          [
+            "Ana",
+            "72",
+            "80"
+          ],
+          [
+            "Ben",
+            "45",
+            "50"
+          ],
+          [
+            "Chloe",
+            "88",
+            "90"
+          ],
+          [
+            "Dev",
+            "61",
+            "70"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "average",
+      "mean",
+      "avg"
+    ],
+    "taskPhrases": [
+      "find the average of a column",
+      "calculate the mean",
+      "average score",
+      "average of numbers"
+    ],
+    "notes": [
+      "Text, true/false values and empty cells inside a range are ignored. Cells that contain zero are counted.",
+      "Values typed straight into the formula behave differently: number-like text is not counted, and text that cannot be read as a number causes an error.",
+      "To include true/false values and number-like text, use AVERAGEA."
+    ],
+    "relatedEntryIds": [
+      "sum",
+      "max"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/average-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "max",
+    "title": "MAX",
+    "topic": "Math",
+    "description": "Returns the largest number in a set of values.",
+    "syntax": "=MAX(number1, [number2], ...)",
+    "explanation": "Finds the largest number in {number1}.",
+    "arguments": [
+      {
+        "name": "number1",
+        "description": "The first number, cell or range to check.",
+        "optional": false
+      },
+      {
+        "name": "number2",
+        "description": "More numbers, cells or ranges to check. You can use up to 255 arguments in total.",
+        "optional": true,
+        "defaultValue": "C2:C5",
+        "clause": "It also checks {number2}."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=MAX(B2:B5)",
+        "result": "180",
+        "sheet": [
+          [
+            "Region",
+            "Sales",
+            "Target"
+          ],
+          [
+            "North",
+            "120",
+            "100"
+          ],
+          [
+            "South",
+            "95",
+            "110"
+          ],
+          [
+            "East",
+            "180",
+            "150"
+          ],
+          [
+            "West",
+            "75",
+            "80"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "max",
+      "maximum",
+      "largest",
+      "highest",
+      "biggest",
+      "top",
+      "expensive",
+      "most expensive"
+    ],
+    "taskPhrases": [
+      "find the highest value",
+      "find the largest number",
+      "get the biggest number in a column",
+      "top sales figure"
+    ],
+    "notes": [
+      "Text, true/false values and empty cells inside a range are ignored.",
+      "If there are no numbers at all, MAX returns 0.",
+      "To include true/false values and number-like text, use MAXA."
+    ],
+    "relatedEntryIds": [
+      "average",
+      "sum",
+      "min"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/max-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "countifs",
+    "title": "COUNTIFS",
+    "topic": "Math",
+    "description": "Counts the rows that meet all of several conditions.",
+    "syntax": "=COUNTIFS(criteria_range1, criteria1, [criteria_range2, criteria2], ...)",
+    "explanation": "Counts the rows where {criteria_range1} matches {criteria1}.",
+    "arguments": [
+      {
+        "name": "criteria_range1",
+        "description": "The first range to test.",
+        "optional": false
+      },
+      {
+        "name": "criteria1",
+        "description": "The condition for criteria_range1, such as \"Done\" or \">10\".",
+        "optional": false
+      },
+      {
+        "name": "criteria_range2",
+        "description": "A second range to test. You can keep adding range and condition pairs.",
+        "optional": true,
+        "defaultValue": "C2:C5",
+        "clause": "It only counts rows where {criteria_range2} also matches {criteria2}."
+      },
+      {
+        "name": "criteria2",
+        "description": "The condition for criteria_range2.",
+        "optional": true,
+        "defaultValue": "\"Ana\""
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=COUNTIFS(B2:B5, \"Done\", C2:C5, \"Ana\")",
+        "result": "2",
+        "sheet": [
+          [
+            "Task",
+            "Status",
+            "Owner"
+          ],
+          [
+            "Report",
+            "Done",
+            "Ana"
+          ],
+          [
+            "Invoice",
+            "Pending",
+            "Ben"
+          ],
+          [
+            "Email",
+            "Done",
+            "Ben"
+          ],
+          [
+            "Budget",
+            "Done",
+            "Ana"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "count",
+      "countifs",
+      "multiple conditions",
+      "count with criteria",
+      "how many"
+    ],
+    "taskPhrases": [
+      "count rows that meet two conditions",
+      "count completed tasks for one person",
+      "count with multiple criteria",
+      "how many rows match several conditions"
+    ],
+    "notes": [
+      "You can use up to 127 range and condition pairs.",
+      "Every range must have the same number of rows and columns as the first one. They do not have to be next to each other.",
+      "In conditions, ? matches one character, * matches any run of characters, and ~ before them matches the symbol itself."
+    ],
+    "relatedEntryIds": [
+      "countif",
+      "sumifs"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/countifs-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "match",
+    "title": "MATCH",
+    "topic": "Lookup",
+    "description": "Finds where a value sits in a list and returns its position.",
+    "syntax": "=MATCH(lookup_value, lookup_array, [match_type])",
+    "explanation": "Finds the position of {lookup_value} in {lookup_array}.",
+    "arguments": [
+      {
+        "name": "lookup_value",
+        "description": "The value to find.",
+        "optional": false
+      },
+      {
+        "name": "lookup_array",
+        "description": "The range to search.",
+        "optional": false
+      },
+      {
+        "name": "match_type",
+        "description": "How to match. 0 finds the first exact match. 1 (the default) finds the largest value that is less than or equal, in a list sorted ascending. -1 finds the smallest value that is greater than or equal, in a list sorted descending.",
+        "optional": true,
+        "defaultValue": "0",
+        "clause": "A match_type of {match_type} sets how it matches: 0 means an exact match, 1 the closest smaller value (sorted ascending), -1 the closest larger value (sorted descending)."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=MATCH(E2, A2:A5, 0)",
+        "result": "3",
+        "sheet": [
+          [
+            "ID",
+            "Name",
+            "Department",
+            "",
+            "ID to find"
+          ],
+          [
+            "E101",
+            "Ana Lim",
+            "Sales",
+            "",
+            "E103"
+          ],
+          [
+            "E102",
+            "Ben Ortiz",
+            "Finance"
+          ],
+          [
+            "E103",
+            "Chloe Tan",
+            "HR"
+          ],
+          [
+            "E104",
+            "Dev Patel",
+            "Sales"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "match",
+      "position",
+      "find position",
+      "row number",
+      "index match"
+    ],
+    "taskPhrases": [
+      "find the row number of a value",
+      "get the position of an item in a list",
+      "where is this value in the column"
+    ],
+    "notes": [
+      "MATCH returns the position in the list, not the value itself. If nothing matches it returns #N/A.",
+      "If you leave match_type out it defaults to 1, which needs a sorted list and can give wrong results. Use 0 for an exact match.",
+      "It is not case-sensitive.",
+      "Wildcards (? and *) work only with match_type 0 and text values."
+    ],
+    "relatedEntryIds": [
+      "index",
+      "xlookup"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/match-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "and",
+    "title": "AND",
+    "topic": "Logic",
+    "description": "Returns TRUE only if every condition is true.",
+    "syntax": "=AND(logical1, [logical2], ...)",
+    "explanation": "Checks whether {logical1} is true.",
+    "arguments": [
+      {
+        "name": "logical1",
+        "description": "The first condition to test.",
+        "optional": false
+      },
+      {
+        "name": "logical2",
+        "description": "More conditions to test. You can use up to 255 conditions in total.",
+        "optional": true,
+        "defaultValue": "C2>=50",
+        "clause": "It also checks {logical2}. The result is TRUE only when all of the conditions are true."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=AND(B2>=50, C2>=50)",
+        "result": "TRUE",
+        "sheet": [
+          [
+            "Student",
+            "Maths",
+            "English"
+          ],
+          [
+            "Ana",
+            "72",
+            "65"
+          ],
+          [
+            "Ben",
+            "45",
+            "80"
+          ],
+          [
+            "Chloe",
+            "88",
+            "92"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "and",
+      "all conditions",
+      "both",
+      "multiple conditions",
+      "logic"
+    ],
+    "taskPhrases": [
+      "check that two conditions are both true",
+      "test several conditions at once",
+      "pass only if every condition is met"
+    ],
+    "notes": [
+      "AND is often used inside IF to test more than one condition at once.",
+      "Text and empty cells inside a range are ignored. If a range has no true/false values at all, AND returns #VALUE!.",
+      "You can use up to 255 conditions."
+    ],
+    "relatedEntryIds": [
+      "or",
+      "if"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/and-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "or",
+    "title": "OR",
+    "topic": "Logic",
+    "description": "Returns TRUE if at least one condition is true.",
+    "syntax": "=OR(logical1, [logical2], ...)",
+    "explanation": "Checks whether {logical1} is true.",
+    "arguments": [
+      {
+        "name": "logical1",
+        "description": "The first condition to test.",
+        "optional": false
+      },
+      {
+        "name": "logical2",
+        "description": "More conditions to test. You can use up to 255 conditions in total.",
+        "optional": true,
+        "defaultValue": "C2>=70",
+        "clause": "It also checks {logical2}. The result is TRUE if any one of the conditions is true."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=OR(B2>=70, C2>=70)",
+        "result": "TRUE",
+        "sheet": [
+          [
+            "Student",
+            "Maths",
+            "English"
+          ],
+          [
+            "Ana",
+            "72",
+            "65"
+          ],
+          [
+            "Ben",
+            "45",
+            "80"
+          ],
+          [
+            "Chloe",
+            "88",
+            "92"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "or",
+      "any condition",
+      "either",
+      "logic"
+    ],
+    "taskPhrases": [
+      "check whether either condition is true",
+      "test if any of several conditions is met"
+    ],
+    "notes": [
+      "OR is often used inside IF to react when any one of several conditions is met.",
+      "Text and empty cells inside a range are ignored. If a range has no true/false values at all, OR returns #VALUE!.",
+      "You can use up to 255 conditions."
+    ],
+    "relatedEntryIds": [
+      "and",
+      "if"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/or-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "left",
+    "title": "LEFT",
+    "topic": "Text",
+    "description": "Returns the first characters of a piece of text.",
+    "syntax": "=LEFT(text, [num_chars])",
+    "explanation": "Takes text from the start of {text}.",
+    "arguments": [
+      {
+        "name": "text",
+        "description": "The text, or the cell that contains it.",
+        "optional": false
+      },
+      {
+        "name": "num_chars",
+        "description": "How many characters to take. If left out, it takes 1.",
+        "optional": true,
+        "defaultValue": "3",
+        "clause": "It takes the first {num_chars} characters."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=LEFT(A2, 3)",
+        "result": "NYC",
+        "sheet": [
+          [
+            "Code",
+            "Product"
+          ],
+          [
+            "NYC-1042",
+            "Notebook"
+          ],
+          [
+            "LON-2210",
+            "Pen"
+          ],
+          [
+            "SYD-3187",
+            "Stapler"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "left",
+      "first characters",
+      "extract text",
+      "substring",
+      "prefix"
+    ],
+    "taskPhrases": [
+      "get the first few characters of a cell",
+      "extract the first 3 letters",
+      "take the start of a code"
+    ],
+    "notes": [
+      "If num_chars is left out, LEFT returns just the first character.",
+      "num_chars must be zero or more. If it is longer than the text, LEFT returns all of the text."
+    ],
+    "relatedEntryIds": [
+      "trim",
+      "textjoin",
+      "right",
+      "mid"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/left-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "filter",
+    "title": "FILTER",
+    "topic": "Data",
+    "description": "Returns only the rows or columns that meet a condition.",
+    "syntax": "=FILTER(array, include, [if_empty])",
+    "explanation": "Returns the rows of {array} where {include} is true.",
+    "arguments": [
+      {
+        "name": "array",
+        "description": "The range to filter.",
+        "optional": false
+      },
+      {
+        "name": "include",
+        "description": "A true/false test with the same number of rows (or columns) as array. The rows where it is true are kept.",
+        "optional": false
+      },
+      {
+        "name": "if_empty",
+        "description": "What to show if nothing matches.",
+        "optional": true,
+        "defaultValue": "\"None found\"",
+        "clause": "If nothing matches, it shows {if_empty} instead of an error."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=FILTER(A2:C5, B2:B5=\"Sales\")",
+        "result": "2 rows: Ana Lim and Dev Patel",
+        "sheet": [
+          [
+            "Name",
+            "Department",
+            "Region"
+          ],
+          [
+            "Ana Lim",
+            "Sales",
+            "North"
+          ],
+          [
+            "Ben Ortiz",
+            "Finance",
+            "South"
+          ],
+          [
+            "Chloe Tan",
+            "HR",
+            "North"
+          ],
+          [
+            "Dev Patel",
+            "Sales",
+            "South"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "filter",
+      "rows that match",
+      "show only",
+      "extract rows",
+      "query"
+    ],
+    "taskPhrases": [
+      "show only the rows for one department",
+      "list every row that meets a condition",
+      "filter data with a formula"
+    ],
+    "notes": [
+      "The result spills into the cells below and to the right, so those cells need to be empty.",
+      "If nothing matches and you left out if_empty, Excel shows a #CALC! error. Add if_empty whenever the data might return no rows.",
+      "For two conditions that must both be true, multiply them: (B2:B5=\"Sales\")*(C2:C5=\"North\"). For either one, add them with +.",
+      "Available in Microsoft 365, Excel 2021 and Excel 2024."
+    ],
+    "relatedEntryIds": [
+      "sort",
+      "unique"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/filter-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "sort",
+    "title": "SORT",
+    "topic": "Data",
+    "description": "Sorts the rows of a range in order.",
+    "syntax": "=SORT(array, [sort_index], [sort_order], [by_col])",
+    "explanation": "Sorts the rows of {array} by its first column, smallest to largest.",
+    "arguments": [
+      {
+        "name": "array",
+        "description": "The range to sort.",
+        "optional": false
+      },
+      {
+        "name": "sort_index",
+        "description": "The column (or row) number to sort by. If left out, it sorts by the first one.",
+        "optional": true,
+        "defaultValue": "2",
+        "clause": "It sorts by column {sort_index} instead."
+      },
+      {
+        "name": "sort_order",
+        "description": "1 sorts ascending (the default). -1 sorts descending.",
+        "optional": true,
+        "defaultValue": "-1",
+        "clause": "A sort_order of {sort_order} sets the direction: 1 is smallest to largest, -1 is largest to smallest."
+      },
+      {
+        "name": "by_col",
+        "description": "FALSE (the default) sorts rows. TRUE sorts columns.",
+        "optional": true,
+        "defaultValue": "FALSE",
+        "clause": "A by_col of {by_col} chooses what to sort: FALSE sorts rows, TRUE sorts columns."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=SORT(A2:B5)",
+        "result": "Ana, Ben, Chloe, Dev (A to Z)",
+        "sheet": [
+          [
+            "Name",
+            "Score"
+          ],
+          [
+            "Ana",
+            "72"
+          ],
+          [
+            "Ben",
+            "45"
+          ],
+          [
+            "Chloe",
+            "88"
+          ],
+          [
+            "Dev",
+            "61"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "sort",
+      "order",
+      "rank",
+      "alphabetical",
+      "ascending",
+      "descending"
+    ],
+    "taskPhrases": [
+      "sort a list alphabetically",
+      "order rows from highest to lowest",
+      "sort data with a formula"
+    ],
+    "notes": [
+      "The result spills into neighbouring cells, so those cells need to be empty.",
+      "The sorted result has the same shape as the original range.",
+      "Microsoft recommends SORTBY for sorting grids, because SORTBY keeps working when columns are added or removed.",
+      "Available in Microsoft 365, Excel 2021 and Excel 2024."
+    ],
+    "relatedEntryIds": [
+      "filter",
+      "unique"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/sort-function"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "autosum",
+    "title": "AutoSum",
+    "topic": "Math",
+    "description": "Add up a column or row of numbers with one shortcut.",
+    "keys": [
+      {
+        "windows": "Alt + =",
+        "mac": "Shift + Cmd + T"
+      }
+    ],
+    "steps": [
+      "Click the empty cell directly below a column of numbers, or just to the right of a row of numbers.",
+      "Press the shortcut. Excel inserts a SUM formula and highlights the numbers it will add.",
+      "Press Enter to confirm and show the total."
+    ],
+    "keywords": [
+      "autosum",
+      "sum",
+      "total",
+      "shortcut",
+      "alt",
+      "add up"
+    ],
+    "taskPhrases": [
+      "add up a column quickly",
+      "total a row of numbers",
+      "insert a sum formula with a shortcut",
+      "sum shortcut"
+    ],
+    "notes": [
+      "AutoSum is also a button on the Home tab, and under Formulas > AutoSum.",
+      "Check the highlighted range before you press Enter. If it is wrong, you can edit the formula.",
+      "If you copy an AutoSum formula to another cell, its references adjust to the new location."
+    ],
+    "relatedEntryIds": [
+      "sum",
+      "fill-down"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "jump-to-edge",
+    "title": "Jump to the edge of your data",
+    "topic": "Navigation",
+    "description": "Hold Ctrl and press an arrow key to jump straight to the edge of the data.",
+    "keys": [
+      {
+        "windows": "Ctrl + Arrow key",
+        "mac": "Cmd + Arrow key"
+      }
+    ],
+    "steps": [
+      "Click a cell inside your data.",
+      "Hold Ctrl (Cmd on Mac) and press an arrow key. The selection jumps to the edge of the current data region in that direction.",
+      "To select everything on the way instead of just jumping, add Shift: Ctrl + Shift + Arrow key on Windows, or Shift + Cmd + Arrow key on Mac."
+    ],
+    "keywords": [
+      "jump",
+      "edge of data",
+      "end of data",
+      "last row",
+      "navigate",
+      "arrow keys",
+      "ctrl arrow",
+      "shortcut"
+    ],
+    "taskPhrases": [
+      "jump to the bottom of a column",
+      "go to the last row of data",
+      "move to the end of the data quickly",
+      "skip to the edge of the table"
+    ],
+    "notes": [
+      "Ctrl + Shift + Arrow key (Shift + Cmd + Arrow key on Mac) extends the selection to the last nonblank cell in that row or column.",
+      "Ctrl + Home jumps to the start of the worksheet, and Ctrl + End jumps to the last used cell."
+    ],
+    "relatedEntryIds": [
+      "autosum",
+      "fill-down"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "data-form",
+    "title": "Data entry form",
+    "topic": "Data",
+    "description": "Open a simple form to add, find, edit and delete rows without scrolling sideways.",
+    "keys": [
+      {
+        "windows": "Alt then D then O"
+      }
+    ],
+    "unofficial": "The Alt, D, O key sequence is not listed on Microsoft’s pages. It is an old menu shortcut that community sources report still works in Windows Excel, but it may differ by version or language. The documented way is to add the Form button to the Quick Access Toolbar, as in the steps below.",
+    "steps": [
+      "Make sure each column has a header and there are no blank rows in your data.",
+      "Click a cell inside the range or table.",
+      "Press Alt, then D, then O, one key at a time, to try the shortcut. If it does nothing in your version, use the Form button as described next.",
+      "To add the Form button: click the arrow next to the Quick Access Toolbar, choose More Commands, set Choose commands from to All Commands, select Form, click Add, then OK.",
+      "Click Form on the toolbar. Use New to add a row, Find Next and Find Prev to move between rows, and Delete to remove one."
+    ],
+    "keywords": [
+      "data form",
+      "form",
+      "data entry",
+      "add rows",
+      "input form",
+      "alt d o"
+    ],
+    "taskPhrases": [
+      "open a data entry form in excel",
+      "add rows without typing in the grid",
+      "enter records using a form",
+      "hidden data entry form"
+    ],
+    "notes": [
+      "Some guides say to select the header row first. Microsoft only requires that the range has headers and that you click a cell inside it.",
+      "A form handles up to 32 columns. If you see \"Too many fields in the data form\", insert a blank column to split the range in two.",
+      "Press Enter after typing to save a new row (it is added at the bottom of the range or table) or to update an edited row.",
+      "Formulas show their results in the form but cannot be changed there.",
+      "Once you confirm a delete in the form, it cannot be undone. You also cannot print the form, and it must be closed before you use Print."
+    ],
+    "relatedEntryIds": [
+      "create-table"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/add-edit-find-and-delete-rows-by-using-a-data-form-17bca0a4-3ba5-444a-983c-a8ce70609374"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "create-table",
+    "title": "Create a table",
+    "topic": "Data",
+    "description": "Turn a range of data into an Excel table.",
+    "keys": [
+      {
+        "windows": "Ctrl + T",
+        "mac": "Cmd + T"
+      }
+    ],
+    "steps": [
+      "Click any cell inside your data.",
+      "Press the shortcut to open the Create Table dialog box.",
+      "Check the range Excel suggests, then confirm."
+    ],
+    "keywords": [
+      "table",
+      "create table",
+      "format as table",
+      "shortcut",
+      "ctrl t"
+    ],
+    "taskPhrases": [
+      "turn data into a table",
+      "make a table from a range",
+      "format data as a table"
+    ],
+    "notes": [
+      "On Windows, Ctrl + L does the same thing.",
+      "On Mac, Ctrl + T also works."
+    ],
+    "relatedEntryIds": [
+      "data-form",
+      "filter"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "insert-date",
+    "title": "Insert today’s date",
+    "topic": "Data",
+    "description": "Enter the current date in a cell with one shortcut.",
+    "keys": [
+      {
+        "windows": "Ctrl + ;",
+        "mac": "Ctrl + ;"
+      }
+    ],
+    "steps": [
+      "Click the cell where you want the date.",
+      "Press the shortcut. Excel enters the current date."
+    ],
+    "keywords": [
+      "date",
+      "today",
+      "current date",
+      "timestamp",
+      "shortcut"
+    ],
+    "taskPhrases": [
+      "put todays date in a cell",
+      "insert the current date",
+      "enter the date quickly"
+    ],
+    "notes": [
+      "To enter the current time instead, press Ctrl + Shift + : on Windows, or Cmd + ; on Mac."
+    ],
+    "relatedEntryIds": [],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "fill-down",
+    "title": "Fill down",
+    "topic": "Formulas",
+    "description": "Copy the cell above into the selected cells below.",
+    "keys": [
+      {
+        "windows": "Ctrl + D",
+        "mac": "Cmd + D"
+      }
+    ],
+    "steps": [
+      "Select the cell you want to copy, plus the empty cells below it.",
+      "Press the shortcut. The top cell’s contents and format are copied down."
+    ],
+    "keywords": [
+      "fill down",
+      "copy down",
+      "copy cell above",
+      "duplicate formula",
+      "shortcut"
+    ],
+    "taskPhrases": [
+      "copy a formula down a column",
+      "repeat the value above",
+      "fill cells with the cell above"
+    ],
+    "notes": [
+      "On Mac, Ctrl + D also works."
+    ],
+    "relatedEntryIds": [
+      "lock-references",
+      "autosum"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "lock-references",
+    "title": "Lock cell references",
+    "topic": "Formulas",
+    "description": "Switch a reference between relative and absolute so it stays put when you copy a formula.",
+    "keys": [
+      {
+        "windows": "F4",
+        "mac": "Cmd + T"
+      }
+    ],
+    "steps": [
+      "Press F2 on a cell (or click in the formula bar) and put the cursor on a reference such as A2.",
+      "Press the shortcut. The reference cycles through combinations such as $A$2, A$2 and $A2.",
+      "Keep pressing until you have the one you want, then press Enter."
+    ],
+    "keywords": [
+      "absolute reference",
+      "relative reference",
+      "dollar sign",
+      "lock cell",
+      "f4",
+      "shortcut"
+    ],
+    "taskPhrases": [
+      "add dollar signs to a reference",
+      "stop a cell reference from changing when copied",
+      "lock a cell in a formula"
+    ],
+    "notes": [
+      "A $ in front of a column letter or row number stops that part from changing when you copy the formula.",
+      "On Mac, F4 also works."
+    ],
+    "relatedEntryIds": [
+      "vlookup",
+      "fill-down"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "id": "select-row-column",
+    "title": "Select a row or column",
+    "category": "tip",
+    "topic": "Navigation",
+    "description": "Select a whole row or a whole column from the keyboard.",
+    "keys": [
+      {
+        "label": "Select the row",
+        "windows": "Shift + Space",
+        "mac": "Shift + Space"
+      },
+      {
+        "label": "Select the column",
+        "windows": "Ctrl + Space",
+        "mac": "Ctrl + Space"
+      }
+    ],
+    "unofficial": "Microsoft does not say what Shift + Space does inside an Excel table. Community guides report that it selects just the table row first and the whole worksheet row on a second press, but that can vary, so try it in your version.",
+    "steps": [
+      "Click any cell in the row or column you want.",
+      "Press Shift + Space to select the whole row, or Ctrl + Space to select the whole column.",
+      "Inside an Excel table, press Ctrl + Space once to select only that table column’s data. Press it twice to select the whole table column, including its header.",
+      "To select the whole table instead, click inside it and press Ctrl + A. Press Ctrl + A twice to include the headers."
+    ],
+    "keywords": [
+      "select row",
+      "select column",
+      "select entire row",
+      "select whole column",
+      "highlight row",
+      "shortcut",
+      "space"
+    ],
+    "taskPhrases": [
+      "select a whole row",
+      "select an entire column",
+      "highlight a whole column with the keyboard",
+      "select the whole table"
+    ],
+    "notes": [
+      "On Mac, Ctrl + Space conflicts with a default macOS shortcut. Microsoft says you may need to change or clear that macOS setting before Excel can use it.",
+      "Ctrl + Shift + Space selects the entire worksheet on Windows. If the sheet has data, the first press selects the current region, and pressing again widens the selection. On Mac, use Cmd + A.",
+      "Once a whole row or column is selected, you can insert, delete, hide or format it in one go."
+    ],
+    "relatedEntryIds": [
+      "jump-to-edge",
+      "create-table"
+    ],
+    "lastVerified": "2026-11-13",
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "id": "trace-references",
+    "title": "Jump between a formula and its references",
+    "category": "tip",
+    "topic": "Formulas",
+    "description": "Select the cells a formula uses, then jump back to the formulas that use a cell.",
+    "keys": [
+      {
+        "label": "Select the cells a formula refers to",
+        "windows": "Ctrl + [",
+        "mac": "Ctrl + Shift + ["
+      },
+      {
+        "label": "Select the formulas that refer to a cell",
+        "windows": "Ctrl + ]",
+        "mac": "Ctrl + ]"
+      }
+    ],
+    "unofficial": "Ctrl + [ and Ctrl + ] are not listed in Microsoft’s Windows shortcut list. They are long-standing Excel shortcuts that community guides report working in Windows Excel, but they may differ by version. The Mac keys are as Microsoft lists them, and they differ slightly from Windows. If a shortcut does nothing, use Go To Special as in the steps below.",
+    "steps": [
+      "Click a cell that contains a formula.",
+      "Press Ctrl + [. Excel selects the cells that formula refers to. These are called its precedents.",
+      "To go back, select one of those referenced cells and press Ctrl + ]. Excel selects the formulas that refer to that cell. These are called its dependents.",
+      "If the shortcut does nothing in your version, press Ctrl + G, choose Special, then pick Precedents or Dependents. Choose Direct only for the first level, or All levels to follow the whole chain.",
+      "To see the links drawn as arrows instead, use Formulas > Trace Precedents or Trace Dependents."
+    ],
+    "keywords": [
+      "precedents",
+      "dependents",
+      "trace precedents",
+      "trace dependents",
+      "referenced cells",
+      "formula references",
+      "go to reference",
+      "jump to cell",
+      "shortcut",
+      "switch",
+      "toggle",
+      "go back to formula",
+      "move between"
+    ],
+    "taskPhrases": [
+      "jump to the cell a formula refers to",
+      "find which cells a formula uses",
+      "see which formulas use this cell",
+      "go back to the formula from its source cell",
+      "trace where a formula gets its data",
+      "switch between a formula and its references",
+      "toggle between a formula and its source cells",
+      "move between a formula and the cells it uses"
+    ],
+    "notes": [
+      "Precedents are the cells a formula refers to. Dependents are the cells whose formulas refer to another cell. If D10 holds =B5, then B5 is a precedent of D10, and D10 is a dependent of B5.",
+      "On Mac, Microsoft also lists Ctrl + Shift + { and Ctrl + Shift + } to select every level of precedents and dependents.",
+      "Pressing F2 on a cell with a formula shows its precedents as colour-coded outlines.",
+      "Trace arrows are blue for cells without errors and red for cells that cause errors."
+    ],
+    "relatedEntryIds": [
+      "lock-references",
+      "jump-to-edge"
+    ],
+    "lastVerified": "2026-11-13",
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/display-the-relationships-between-formulas-and-cells"
+  },
+  {
+    "id": "toggle-gridlines",
+    "title": "Show or hide gridlines",
+    "category": "tip",
+    "topic": "Formatting",
+    "description": "Turn the grid lines on a worksheet on or off from the keyboard.",
+    "keys": [
+      {
+        "windows": "Alt then W then V then G"
+      }
+    ],
+    "unofficial": "Alt, W, V, G is not listed in Microsoft’s shortcut list, which only gives Alt + W for opening the View tab. Long-standing Excel guides give W, V, G for View > Show > Gridlines, but check it in your version.",
+    "steps": [
+      "Click the worksheet you want to change. Gridlines are set for each worksheet separately.",
+      "Press Alt and let go, then press W, then V, then G, one key at a time.",
+      "Run it again to bring the gridlines back.",
+      "If a letter does not match in your version, press Alt and follow the Key Tips (the small letters that appear on the ribbon) to the same command."
+    ],
+    "keywords": [
+      "gridlines",
+      "grid lines",
+      "remove gridlines",
+      "hide gridlines",
+      "show gridlines",
+      "turn off gridlines",
+      "view",
+      "shortcut"
+    ],
+    "taskPhrases": [
+      "remove the grid lines from a sheet",
+      "turn off gridlines",
+      "hide the gridlines in excel",
+      "show gridlines again"
+    ],
+    "notes": [
+      "It works as a switch: it hides the gridlines if they are showing and shows them if they are hidden.",
+      "It is the keyboard route to View > Show > Gridlines.",
+      "To change several sheets at once, select them first by holding Ctrl and clicking their tabs."
+    ],
+    "relatedEntryIds": [
+      "borders"
+    ],
+    "lastVerified": "2026-11-13",
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "id": "borders",
+    "title": "Add or remove borders",
+    "category": "tip",
+    "topic": "Formatting",
+    "description": "Put borders around every selected cell, or take them away, from the keyboard.",
+    "keys": [
+      {
+        "label": "Add borders to every cell",
+        "windows": "Alt then H then B then A"
+      },
+      {
+        "label": "Remove borders",
+        "windows": "Alt then H then B then N"
+      }
+    ],
+    "unofficial": "Microsoft lists Alt + H, B for adding borders, but the extra letters A (all borders) and N (no border) are not listed. Community guides agree on them, though one older list describes N as removing only the outline, so check the result in your version.",
+    "steps": [
+      "Select the cells you want to change.",
+      "Press Alt and let go, then press H, then B, then A to add borders around every cell. Use H, B, N instead to remove the borders.",
+      "Each key is pressed on its own, in order. Do not hold them down together.",
+      "If a letter does not match in your version, press Alt and follow the Key Tips (the small letters that appear on the ribbon) to the same command."
+    ],
+    "keywords": [
+      "border",
+      "borders",
+      "add borders",
+      "remove borders",
+      "no border",
+      "all borders",
+      "outline",
+      "formatting",
+      "shortcut"
+    ],
+    "taskPhrases": [
+      "add borders around all cells",
+      "remove borders from a range",
+      "put a grid around the data",
+      "clear cell borders"
+    ],
+    "notes": [
+      "Alt, H, B opens the Borders menu on the Home tab. The last letter picks the option inside it.",
+      "Borders and gridlines are different things. Borders are formatting you add to cells, while gridlines are the faint lines Excel draws on the sheet."
+    ],
+    "relatedEntryIds": [
+      "toggle-gridlines",
+      "create-table"
+    ],
+    "lastVerified": "2026-11-13",
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "id": "highlight-duplicates",
+    "title": "Highlight duplicates",
+    "category": "tip",
+    "topic": "Data",
+    "description": "Colour every repeated value in a range so duplicates stand out.",
+    "keys": [
+      {
+        "windows": "Alt then H then L then H then D"
+      }
+    ],
+    "unofficial": "Alt, H, L, H, D is not listed in Microsoft’s shortcut list. It follows the ribbon menus (Home > Conditional Formatting > Highlight Cells Rules > Duplicate Values), and community guides agree on the letters.",
+    "steps": [
+      "Select the range you want to check.",
+      "Press Alt and let go, then press H, then L, then H, then D, one key at a time.",
+      "In the box that opens, choose how the duplicates should look, then confirm.",
+      "If a letter does not match in your version, press Alt and follow the Key Tips (the small letters that appear on the ribbon) to the same command."
+    ],
+    "keywords": [
+      "duplicates",
+      "highlight duplicates",
+      "duplicate values",
+      "conditional formatting",
+      "colour duplicates",
+      "find duplicates",
+      "shortcut"
+    ],
+    "taskPhrases": [
+      "highlight repeated values in a column",
+      "find duplicates in a list",
+      "mark duplicate entries",
+      "colour duplicate cells"
+    ],
+    "notes": [
+      "This only colours the duplicates. It does not delete them.",
+      "To list each value only once, use UNIQUE. To count how often a value appears, use COUNTIF.",
+      "Excel has no single dedicated shortcut for this, so the sequence walks through the ribbon menus one step at a time."
+    ],
+    "relatedEntryIds": [
+      "unique",
+      "countif"
+    ],
+    "lastVerified": "2026-11-13",
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "min",
+    "title": "MIN",
+    "topic": "Math",
+    "description": "Returns the smallest number in a set of values.",
+    "syntax": "=MIN(number1, [number2], ...)",
+    "explanation": "Finds the smallest number in {number1}.",
+    "arguments": [
+      {
+        "name": "number1",
+        "description": "The first number, cell or range to check.",
+        "optional": false
+      },
+      {
+        "name": "number2",
+        "description": "More numbers, cells or ranges to check. You can use up to 255 arguments in total.",
+        "optional": true,
+        "defaultValue": "C2:C5",
+        "clause": "It also checks {number2}."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=MIN(B2:B5)",
+        "result": "75",
+        "sheet": [
+          [
+            "Region",
+            "Sales",
+            "Target"
+          ],
+          [
+            "North",
+            "120",
+            "100"
+          ],
+          [
+            "South",
+            "95",
+            "110"
+          ],
+          [
+            "East",
+            "180",
+            "150"
+          ],
+          [
+            "West",
+            "75",
+            "80"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "min",
+      "minimum",
+      "smallest",
+      "lowest",
+      "least"
+    ],
+    "taskPhrases": [
+      "find the lowest value",
+      "find the smallest number",
+      "get the minimum of a column",
+      "cheapest price in a list"
+    ],
+    "notes": [
+      "Text, true/false values and empty cells inside a range are ignored.",
+      "If there are no numbers at all, MIN returns 0.",
+      "To include true/false values and number-like text, use MINA."
+    ],
+    "relatedEntryIds": [
+      "max",
+      "average"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/min-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "counta",
+    "title": "COUNTA",
+    "topic": "Math",
+    "description": "Counts the cells that are not empty.",
+    "syntax": "=COUNTA(value1, [value2], ...)",
+    "explanation": "Counts the cells in {value1} that are not empty.",
+    "arguments": [
+      {
+        "name": "value1",
+        "description": "The first value, cell or range to count.",
+        "optional": false
+      },
+      {
+        "name": "value2",
+        "description": "More values, cells or ranges to count. You can use up to 255 arguments in total.",
+        "optional": true,
+        "defaultValue": "C2:C5",
+        "clause": "It also counts the non-empty cells in {value2}."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=COUNTA(B2:B5)",
+        "result": "3",
+        "sheet": [
+          [
+            "Task",
+            "Status",
+            "Owner"
+          ],
+          [
+            "Report",
+            "Done",
+            "Ana"
+          ],
+          [
+            "Invoice",
+            "",
+            "Ben"
+          ],
+          [
+            "Email",
+            "Pending",
+            ""
+          ],
+          [
+            "Budget",
+            "Done",
+            "Ana"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "counta",
+      "count non-blank",
+      "count not empty",
+      "count filled cells",
+      "non-empty",
+      "how many entries"
+    ],
+    "taskPhrases": [
+      "count cells that are not empty",
+      "count how many cells have something in them",
+      "count filled cells",
+      "count non blank cells"
+    ],
+    "notes": [
+      "COUNTA counts any cell that holds something: numbers, text, true/false values, errors, and even empty text (\"\") returned by a formula. It does not count truly empty cells.",
+      "To count only the cells that hold numbers, use COUNT.",
+      "To count only the cells that meet a condition, use COUNTIF or COUNTIFS.",
+      "You can use up to 255 arguments."
+    ],
+    "relatedEntryIds": [
+      "countif",
+      "countifs"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/counta-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "sumif",
+    "title": "SUMIF",
+    "topic": "Math",
+    "description": "Adds up the values that meet one condition.",
+    "syntax": "=SUMIF(range, criteria, [sum_range])",
+    "explanation": "Adds up the cells in {range} that match {criteria}.",
+    "arguments": [
+      {
+        "name": "range",
+        "description": "The cells to test against the condition.",
+        "optional": false
+      },
+      {
+        "name": "criteria",
+        "description": "The condition, such as \"North\", \">100\" or a cell reference. Text, and conditions with symbols, go in double quotes.",
+        "optional": false
+      },
+      {
+        "name": "sum_range",
+        "description": "The cells to add, if they are different from range. If left out, Excel adds the cells in range.",
+        "optional": true,
+        "defaultValue": "C2:C5",
+        "clause": "Instead of adding {range}, it adds the cells in {sum_range} that sit alongside the matches."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=SUMIF(A2:A5, \"North\", C2:C5)",
+        "result": "330",
+        "sheet": [
+          [
+            "Region",
+            "Month",
+            "Amount"
+          ],
+          [
+            "North",
+            "Jan",
+            "120"
+          ],
+          [
+            "South",
+            "Jan",
+            "80"
+          ],
+          [
+            "North",
+            "Feb",
+            "150"
+          ],
+          [
+            "North",
+            "Jan",
+            "60"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "sumif",
+      "sum if",
+      "conditional sum",
+      "sum with condition",
+      "add up if"
+    ],
+    "taskPhrases": [
+      "add up values that match one condition",
+      "total for one region",
+      "sum only the rows that match",
+      "sum numbers if another column equals something"
+    ],
+    "notes": [
+      "If you leave sum_range out, SUMIF adds the cells in range itself, which are also the cells being tested.",
+      "sum_range should be the same size and shape as range. If it is not, SUMIF starts at the first cell of sum_range and uses the size of range, which can give surprising results.",
+      "Wildcards work in the condition: ? matches one character and * matches any run of characters. Put ~ in front to match the symbol itself.",
+      "SUMIF gives wrong results when it matches text longer than 255 characters.",
+      "For more than one condition, use SUMIFS. The argument order differs: sum_range is last in SUMIF but first in SUMIFS."
+    ],
+    "relatedEntryIds": [
+      "sumifs",
+      "countif"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/sumif-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "round",
+    "title": "ROUND",
+    "topic": "Math",
+    "description": "Rounds a number to the number of digits you choose.",
+    "syntax": "=ROUND(number, num_digits)",
+    "explanation": "Rounds {number} to {num_digits} digits. A positive number keeps that many decimal places, 0 gives a whole number, and a negative number rounds to tens, hundreds and so on.",
+    "arguments": [
+      {
+        "name": "number",
+        "description": "The number to round.",
+        "optional": false
+      },
+      {
+        "name": "num_digits",
+        "description": "How many digits to round to. Positive keeps that many decimal places, 0 gives a whole number, and negative rounds to the left of the decimal point.",
+        "optional": false
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=ROUND(B2, 1)",
+        "result": "4.6",
+        "sheet": [
+          [
+            "Item",
+            "Price"
+          ],
+          [
+            "Coffee",
+            "4.567"
+          ],
+          [
+            "Lunch",
+            "12.341"
+          ],
+          [
+            "Taxi",
+            "18.5"
+          ],
+          [
+            "Books",
+            "25.449"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "round",
+      "rounding",
+      "decimal places",
+      "nearest",
+      "round off"
+    ],
+    "taskPhrases": [
+      "round a number to 2 decimal places",
+      "round to the nearest whole number",
+      "round to the nearest ten",
+      "reduce the decimal places"
+    ],
+    "notes": [
+      "A negative num_digits rounds to the left of the decimal point. For example, ROUND(21.5, -1) gives 20, and ROUND(626.3, -3) gives 1000.",
+      "To always round up (away from zero) use ROUNDUP, and to always round down (toward zero) use ROUNDDOWN. To round to a multiple such as 0.5, use MROUND.",
+      "ROUND changes the value itself. Number formatting only changes how a number looks."
+    ],
+    "relatedEntryIds": [
+      "sum",
+      "average"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/round-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "networkdays",
+    "title": "NETWORKDAYS",
+    "topic": "Dates",
+    "description": "Counts the working days between two dates.",
+    "syntax": "=NETWORKDAYS(start_date, end_date, [holidays])",
+    "explanation": "Counts the working days from {start_date} to {end_date}, leaving out weekends.",
+    "arguments": [
+      {
+        "name": "start_date",
+        "description": "The first date.",
+        "optional": false
+      },
+      {
+        "name": "end_date",
+        "description": "The last date.",
+        "optional": false
+      },
+      {
+        "name": "holidays",
+        "description": "Dates to leave out, such as public holidays, as a range of cells that hold dates.",
+        "optional": true,
+        "defaultValue": "D2",
+        "clause": "It also leaves out the dates in {holidays}."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=NETWORKDAYS(B2, C2)",
+        "result": "10",
+        "sheet": [
+          [
+            "Task",
+            "Start",
+            "End",
+            "Holiday"
+          ],
+          [
+            "Report",
+            "2026-11-02",
+            "2026-11-13",
+            "2026-11-11"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "working days",
+      "workdays",
+      "business days",
+      "networkdays",
+      "days between dates",
+      "weekdays"
+    ],
+    "taskPhrases": [
+      "count working days between two dates",
+      "calculate business days",
+      "how many weekdays between dates",
+      "exclude weekends and holidays"
+    ],
+    "notes": [
+      "Microsoft’s page does not say which days count as the weekend or whether the start and end dates are included. By default Excel treats Saturday and Sunday as the weekend and counts both dates. Use NETWORKDAYS.INTL to choose different weekend days.",
+      "Enter dates with the DATE function or as the results of other formulas. Dates typed as text can cause problems, and a date that is not valid returns #VALUE!.",
+      "In the sample, 2 Nov to 13 Nov 2026 is two full working weeks, so the result is 10. Adding the holiday on 11 Nov makes it 9."
+    ],
+    "relatedEntryIds": [
+      "insert-date"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/networkdays-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "right",
+    "title": "RIGHT",
+    "topic": "Text",
+    "description": "Returns the last characters of a piece of text.",
+    "syntax": "=RIGHT(text, [num_chars])",
+    "explanation": "Takes text from the end of {text}.",
+    "arguments": [
+      {
+        "name": "text",
+        "description": "The text, or the cell that contains it.",
+        "optional": false
+      },
+      {
+        "name": "num_chars",
+        "description": "How many characters to take. If left out, it takes 1.",
+        "optional": true,
+        "defaultValue": "4",
+        "clause": "It takes the last {num_chars} characters."
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=RIGHT(A2, 4)",
+        "result": "1042",
+        "sheet": [
+          [
+            "Code",
+            "Product"
+          ],
+          [
+            "NYC-1042",
+            "Notebook"
+          ],
+          [
+            "LON-2210",
+            "Pen"
+          ],
+          [
+            "SYD-3187",
+            "Stapler"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "right",
+      "last characters",
+      "end of text",
+      "suffix",
+      "extract text"
+    ],
+    "taskPhrases": [
+      "get the last few characters of a cell",
+      "extract the last 4 digits",
+      "take the end of a code"
+    ],
+    "notes": [
+      "If num_chars is left out, RIGHT returns just the last character.",
+      "num_chars must be zero or more. If it is longer than the text, RIGHT returns all of the text."
+    ],
+    "relatedEntryIds": [
+      "left",
+      "mid"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/right-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "mid",
+    "title": "MID",
+    "topic": "Text",
+    "description": "Returns characters from the middle of a piece of text.",
+    "syntax": "=MID(text, start_num, num_chars)",
+    "explanation": "Takes {num_chars} characters from {text}, starting at character number {start_num}.",
+    "arguments": [
+      {
+        "name": "text",
+        "description": "The text, or the cell that contains it.",
+        "optional": false
+      },
+      {
+        "name": "start_num",
+        "description": "The position of the first character to take. The first character is number 1.",
+        "optional": false
+      },
+      {
+        "name": "num_chars",
+        "description": "How many characters to take.",
+        "optional": false
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=MID(A2, 5, 4)",
+        "result": "1042",
+        "sheet": [
+          [
+            "Code",
+            "Product"
+          ],
+          [
+            "NYC-1042",
+            "Notebook"
+          ],
+          [
+            "LON-2210",
+            "Pen"
+          ],
+          [
+            "SYD-3187",
+            "Stapler"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "mid",
+      "middle",
+      "extract text",
+      "substring",
+      "characters from the middle"
+    ],
+    "taskPhrases": [
+      "get characters from the middle of a cell",
+      "extract part of a code",
+      "take text starting at a position"
+    ],
+    "notes": [
+      "The first character of the text is position 1.",
+      "If start_num is past the end of the text, MID returns empty text. If start_num is less than 1, or num_chars is negative, it returns #VALUE!.",
+      "If num_chars asks for more characters than remain, MID returns what is left."
+    ],
+    "relatedEntryIds": [
+      "left",
+      "right"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/mid-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "len",
+    "title": "LEN",
+    "topic": "Text",
+    "description": "Counts the characters in a piece of text.",
+    "syntax": "=LEN(text)",
+    "explanation": "Counts the characters in {text}, including spaces.",
+    "arguments": [
+      {
+        "name": "text",
+        "description": "The text, or the cell that contains it. Spaces count as characters.",
+        "optional": false
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=LEN(A2)",
+        "result": "7",
+        "sheet": [
+          [
+            "Name"
+          ],
+          [
+            "Ana Lim"
+          ],
+          [
+            " Ben Ortiz "
+          ],
+          [
+            "Chloe Tan"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "len",
+      "length",
+      "count characters",
+      "how long",
+      "string length"
+    ],
+    "taskPhrases": [
+      "count the characters in a cell",
+      "find the length of text",
+      "check how long a code is",
+      "count letters"
+    ],
+    "notes": [
+      "Spaces and punctuation count as characters.",
+      "An empty cell gives 0.",
+      "LEN helps spot hidden extra spaces: if a name looks 7 characters long but LEN says 9, there are stray spaces. TRIM removes them."
+    ],
+    "relatedEntryIds": [
+      "trim",
+      "left"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/len-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "ifs",
+    "title": "IFS",
+    "topic": "Logic",
+    "description": "Checks several conditions in order and returns the result for the first one that is true.",
+    "syntax": "=IFS(logical_test1, value_if_true1, [logical_test2, value_if_true2], [logical_test3, value_if_true3], ...)",
+    "explanation": "Checks whether {logical_test1} is true. If it is, it shows {value_if_true1}.",
+    "arguments": [
+      {
+        "name": "logical_test1",
+        "description": "The first condition to test.",
+        "optional": false
+      },
+      {
+        "name": "value_if_true1",
+        "description": "What to show if the first condition is true.",
+        "optional": false
+      },
+      {
+        "name": "logical_test2",
+        "description": "A second condition, checked only if the first one is false.",
+        "optional": true,
+        "defaultValue": "B2>=50",
+        "clause": "Otherwise it checks {logical_test2} and, if that is true, shows {value_if_true2}."
+      },
+      {
+        "name": "value_if_true2",
+        "description": "What to show if the second condition is true.",
+        "optional": true,
+        "defaultValue": "\"B\""
+      },
+      {
+        "name": "logical_test3",
+        "description": "A third condition. Use TRUE here to catch everything that did not match earlier.",
+        "optional": true,
+        "defaultValue": "TRUE",
+        "clause": "Then it checks {logical_test3} and, if that is true, shows {value_if_true3}."
+      },
+      {
+        "name": "value_if_true3",
+        "description": "What to show if the third condition is true.",
+        "optional": true,
+        "defaultValue": "\"C\""
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=IFS(B2>=80, \"A\", B2>=50, \"B\", TRUE, \"C\")",
+        "result": "B",
+        "sheet": [
+          [
+            "Student",
+            "Score"
+          ],
+          [
+            "Ana",
+            "72"
+          ],
+          [
+            "Ben",
+            "45"
+          ],
+          [
+            "Chloe",
+            "88"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "ifs",
+      "multiple conditions",
+      "nested if",
+      "if else if",
+      "grading",
+      "tiers"
+    ],
+    "taskPhrases": [
+      "check several conditions in order",
+      "replace nested if statements",
+      "assign a grade based on a score",
+      "return different results for different ranges"
+    ],
+    "notes": [
+      "If none of the conditions is true, IFS returns #N/A. To avoid that, end with TRUE as the last test and put your default result after it.",
+      "IFS can replace several nested IFs and is easier to read. Microsoft still advises against stacking too many conditions, because they get hard to build, test and update.",
+      "You can use up to 127 conditions.",
+      "Available in Microsoft 365, Excel 2019, Excel 2021 and Excel 2024."
+    ],
+    "relatedEntryIds": [
+      "if",
+      "and"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/functions/ifs-function"
+  },
+  {
+    "category": "function",
+    "lastVerified": "2026-11-13",
+    "id": "ifna",
+    "title": "IFNA",
+    "topic": "Logic",
+    "description": "Replaces a #N/A error with a value you choose.",
+    "syntax": "=IFNA(value, value_if_na)",
+    "explanation": "Calculates {value}. If that gives a #N/A error, it shows {value_if_na} instead.",
+    "arguments": [
+      {
+        "name": "value",
+        "description": "The formula or value to check for a #N/A error.",
+        "optional": false
+      },
+      {
+        "name": "value_if_na",
+        "description": "What to show if the result is #N/A.",
+        "optional": false
+      }
+    ],
+    "examples": [
+      {
+        "formula": "=IFNA(VLOOKUP(E2, A2:C5, 3, FALSE), \"Not found\")",
+        "result": "Not found",
+        "sheet": [
+          [
+            "Code",
+            "Product",
+            "Price",
+            "",
+            "Code to find"
+          ],
+          [
+            "P-10",
+            "Notebook",
+            "4.50",
+            "",
+            "P-99"
+          ],
+          [
+            "P-11",
+            "Pen",
+            "1.20"
+          ],
+          [
+            "P-12",
+            "Stapler",
+            "8.90"
+          ],
+          [
+            "P-13",
+            "Folder",
+            "2.40"
+          ]
+        ]
+      }
+    ],
+    "keywords": [
+      "ifna",
+      "na",
+      "#n/a",
+      "hide n/a",
+      "lookup not found",
+      "no match"
+    ],
+    "taskPhrases": [
+      "replace #n/a with a message",
+      "show not found when a lookup fails",
+      "hide n/a errors from a lookup"
+    ],
+    "notes": [
+      "It only replaces the #N/A error, which is what a lookup returns when it finds nothing. To handle every error type, use IFERROR.",
+      "An empty cell used for either argument is treated as empty text (\"\")."
+    ],
+    "relatedEntryIds": [
+      "iferror",
+      "vlookup",
+      "xlookup"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/ifna-function-6626c961-a569-42fc-a49d-79b4951fd461"
+  },
+  {
+    "id": "go-to-special",
+    "title": "Go To Special: select cells by type",
+    "category": "tip",
+    "topic": "Navigation",
+    "description": "Select only the cells of one kind inside your selection, such as blanks, formulas or visible cells.",
+    "keys": [
+      {
+        "windows": "Ctrl + G",
+        "mac": "Ctrl + G"
+      }
+    ],
+    "unofficial": "The Numbers, Text, Logicals and Errors tick boxes under Constants and Formulas are not listed on Microsoft’s page, which only says the boxes under Formulas set the type of formula. They appear in the dialog in current Excel, but check them in your version.",
+    "steps": [
+      "Select the cells to search. A single cell searches the whole worksheet, while a range, row or column searches only inside it.",
+      "Press Ctrl + G (or F5 on Windows), then click Special. You can also use Home > Find & Select > Go To.",
+      "Choose what to select, such as Blanks, Constants, Formulas or Visible cells only, then click OK. Excel selects only the matching cells inside your selection.",
+      "For Constants or Formulas, tick the kinds you want first. For example, select a row of names and numbers, choose Constants, and tick only Numbers to keep just the numbers selected.",
+      "Format, delete, fill or copy just those cells. To cancel the selection, click any cell."
+    ],
+    "keywords": [
+      "go to special",
+      "special",
+      "select blanks",
+      "select blank cells",
+      "select formulas",
+      "select constants",
+      "select text",
+      "select numbers",
+      "select visible cells",
+      "select by type",
+      "f5",
+      "ctrl g",
+      "shortcut"
+    ],
+    "taskPhrases": [
+      "select only the numbers in a range",
+      "select all the blank cells at once",
+      "select only cells with formulas",
+      "select only the text cells",
+      "copy only the visible cells",
+      "find cells with conditional formatting",
+      "pick out one kind of cell from a selection"
+    ],
+    "notes": [
+      "The options Microsoft lists are Comments or Notes, Constants, Formulas, Blanks, Current region, Current array, Objects, Row differences, Column differences, Precedents, Dependents, Last cell, Visible cells only, Conditional formats and Data validation.",
+      "Visible cells only selects just the cells you can see in a range that crosses hidden rows or columns. On Mac, Microsoft also lists Shift + Cmd + * for it.",
+      "Precedents and Dependents select the cells a formula uses, or the formulas that use a cell. Choose Direct only or All levels.",
+      "Row differences and Column differences select the cells in a row or column that differ from the active cell."
+    ],
+    "relatedEntryIds": [
+      "trace-references",
+      "select-row-column"
+    ],
+    "lastVerified": "2026-11-13",
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/find-and-select-cells-that-meet-specific-conditions-in-excel"
+  }
+]
