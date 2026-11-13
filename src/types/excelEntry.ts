@@ -69,6 +69,8 @@ export interface TipEntry extends BaseEntry {
   keys?: KeyGroup[];
   /* What to do, in order. */
   steps: string[];
+  /* An optional list explaining each choice in a dialog, shown under the steps. */
+  options?: { name: string; text: string }[];
   /* Set when part of the tip is not in the official documentation. Shown to the reader as a note. */
   unofficial?: string;
 }

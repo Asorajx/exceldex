@@ -348,6 +348,20 @@ function TipBody({ entry }: { entry: TipEntry }) {
           <li key={step}>{step}</li>
         ))}
       </ol>
+
+      {entry.options && (
+        <>
+          <h3>What each option does</h3>
+          <dl className="options">
+            {entry.options.map((option) => (
+              <div key={option.name}>
+                <dt>{option.name}</dt>
+                <dd>{option.text}</dd>
+              </div>
+            ))}
+          </dl>
+        </>
+      )}
     </>
   );
 }

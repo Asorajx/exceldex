@@ -14,6 +14,11 @@ describe('keyMode', () => {
     expect(keyModeLabel('Alt then H then B then A')).toMatch(/one at a time/i);
   });
 
+  it('treats a lone key as pressed once', () => {
+    expect(keyMode('F4')).toBe('single');
+    expect(keyModeLabel('F4')).toBe('Press once');
+  });
+
   it('recognises a mix of both', () => {
     expect(keyMode('Ctrl + K then Ctrl + C')).toBe('mixed');
     expect(keyModeLabel('Ctrl + K then Ctrl + C')).toMatch(/hold/i);
@@ -24,7 +29,7 @@ describe('keyMode', () => {
       for (const group of tip.keys ?? []) {
         for (const combo of [group.windows, group.mac]) {
           if (!combo) continue;
-          expect(['hold', 'sequence', 'mixed']).toContain(keyMode(combo));
+          expect(['hold', 'sequence', 'mixed', 'single']).toContain(keyMode(combo));
           expect(keyModeLabel(combo), `${tip.id}: ${combo}`).not.toBe('');
         }
       }

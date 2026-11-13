@@ -403,8 +403,9 @@ describe('App', () => {
     const article = screen.getByRole('article');
     expect(within(article).getByText('Add borders to every cell')).toBeInTheDocument();
     expect(within(article).getByText('Remove borders')).toBeInTheDocument();
+    expect(within(article).getByText(/^More borders/)).toBeInTheDocument();
     const caps = [...article.querySelectorAll('kbd')].map((k) => k.textContent);
-    expect(caps).toEqual(['Alt', 'H', 'B', 'A', 'Alt', 'H', 'B', 'N']);
+    expect(caps).toEqual(['Alt', 'H', 'B', 'A', 'Alt', 'H', 'B', 'N', 'Alt', 'H', 'B', 'M']);
     expect(within(article).getByRole('note')).toHaveTextContent(/not listed/i);
   });
 

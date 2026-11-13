@@ -27,7 +27,7 @@ const SCORE = {
   typo: 8 /* within one or two edits of a title, keyword or task-phrase word */,
   /* Word-level points are multiplied by how rare the word is across all entries, within this range. */
   rarityMin: 0.3,
-  rarityMax: 1.5,
+  rarityMax: 1.8,
   /* Word-level points are scaled by (floor + (1 - floor) x share of the query's words matched). */
   coverageFloor: 0.25
 } as const;

@@ -1908,6 +1908,125 @@
   {
     "category": "tip",
     "lastVerified": "2026-11-13",
+    "id": "repeat-action",
+    "title": "Repeat the last action",
+    "topic": "Formatting",
+    "description": "Repeat what you just did, such as a fill colour or inserting a row, on the next cell or row.",
+    "keys": [
+      {
+        "windows": "F4"
+      }
+    ],
+    "steps": [
+      "Do the action once, for example fill a cell with colour or insert a row.",
+      "Click the next cell, or select the next row, where you want the same thing.",
+      "Press F4. Excel repeats the last action, so you do not need to click the button or right-click again."
+    ],
+    "keywords": [
+      "repeat",
+      "repeat last action",
+      "repeat last command",
+      "f4",
+      "do again",
+      "repeat formatting"
+    ],
+    "taskPhrases": [
+      "repeat the last thing i did",
+      "apply the same fill colour to other cells",
+      "insert rows in several places without right clicking"
+    ],
+    "notes": [
+      "Excel repeats the action only if it can. Some actions cannot be repeated.",
+      "Ctrl + Y does the same on Windows.",
+      "While you are editing a formula, F4 switches a cell reference between absolute and relative instead.",
+      "Microsoft lists no repeat shortcut for Mac. There, Cmd + Y is Redo."
+    ],
+    "relatedEntryIds": [
+      "lock-references",
+      "format-painter"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "format-painter",
+    "title": "Format Painter",
+    "topic": "Formatting",
+    "description": "Copy a cell’s formatting onto many other cells without picking the brush up each time.",
+    "steps": [
+      "Select a cell that has the formatting you want to copy.",
+      "On the Home tab, in the Clipboard group, double-click Format Painter.",
+      "Click or drag across each cell or range you want to format. The brush stays on, so you can keep going.",
+      "When you are done, press Esc or click Format Painter again to turn it off."
+    ],
+    "keywords": [
+      "format painter",
+      "paintbrush",
+      "copy formatting",
+      "copy format",
+      "paint format",
+      "double click"
+    ],
+    "taskPhrases": [
+      "copy formatting to several cells",
+      "apply the same formatting to different places",
+      "keep the format painter on"
+    ],
+    "notes": [
+      "A single click on Format Painter applies the formatting once. Double-clicking keeps it on."
+    ],
+    "relatedEntryIds": [
+      "repeat-action",
+      "borders"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/use-the-format-painter-4bb415a9-d4e4-42b7-b579-170adc594e40"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "flash-fill",
+    "title": "Flash Fill",
+    "topic": "Data",
+    "description": "Type the first result by hand and let Excel spot the pattern and fill in the rest of the column.",
+    "keys": [
+      {
+        "windows": "Ctrl + E",
+        "mac": "Ctrl + E"
+      }
+    ],
+    "steps": [
+      "Keep the data you are working from in one column, and leave the column next to it empty.",
+      "In the first cell of the empty column, type the result you want for the first row, for example a full name, and press Enter.",
+      "Press Ctrl + E, or choose Data, then Flash Fill. Excel spots the pattern and fills the cells below.",
+      "On Windows you can also start typing the second result. Excel shows a preview of the rest of the column, and pressing Enter accepts it."
+    ],
+    "keywords": [
+      "flash fill",
+      "fill pattern",
+      "ctrl e",
+      "split names",
+      "combine columns",
+      "extract text"
+    ],
+    "taskPhrases": [
+      "split first and last names into separate columns",
+      "combine first and last names",
+      "fill a column from a pattern",
+      "extract part of the text in a cell"
+    ],
+    "notes": [
+      "Flash Fill works by sensing a pattern in what you type, so your first example needs to show the pattern clearly.",
+      "If the preview does not appear, check that Automatically Flash Fill is ticked under Options, Advanced, Editing Options. You can always run it yourself with Ctrl + E."
+    ],
+    "relatedEntryIds": [
+      "fill-down"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/using-flash-fill-in-excel-3f9bcf1e-db93-4890-94a0-1578341f73f7"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
     "id": "lock-references",
     "title": "Lock cell references",
     "topic": "Formulas",
@@ -1943,6 +2062,47 @@
     "relatedEntryIds": [
       "vlookup",
       "fill-down"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "show-formulas",
+    "title": "Show all formulas",
+    "topic": "Formulas",
+    "description": "Switch the sheet between showing each formula’s result and showing the formulas themselves.",
+    "keys": [
+      {
+        "windows": "Ctrl + `",
+        "mac": "Ctrl + `"
+      }
+    ],
+    "steps": [
+      "Click the worksheet you want to look at.",
+      "Press Ctrl + ` (the grave accent key, usually the one above Tab, shared with ~). Every cell with a formula now shows the formula instead of its result.",
+      "Press the same keys again to switch back."
+    ],
+    "keywords": [
+      "show formulas",
+      "display formulas",
+      "view formulas",
+      "formula view",
+      "ctrl tilde",
+      "ctrl grave",
+      "backtick"
+    ],
+    "taskPhrases": [
+      "see all the formulas on a sheet at once",
+      "show formulas instead of results",
+      "switch between formulas and values"
+    ],
+    "notes": [
+      "It switches the whole worksheet, not just the cells you have selected."
+    ],
+    "relatedEntryIds": [
+      "trace-references",
+      "lock-references"
     ],
     "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
   },
@@ -2121,13 +2281,19 @@
       {
         "label": "Remove borders",
         "windows": "Alt then H then B then N"
+      },
+      {
+        "label": "More borders (opens the Format Cells dialog)",
+        "windows": "Alt then H then B then M"
       }
     ],
-    "unofficial": "Microsoft lists Alt + H, B for adding borders, but the extra letters A (all borders) and N (no border) are not listed. Community guides agree on them, though one older list describes N as removing only the outline, so check the result in your version.",
+    "unofficial": "Microsoft lists Alt + H, B for adding borders, but the extra letters A (all borders), N (no border) and M (More Borders), and the letters used inside the dialog, are not listed. Community guides agree on them, though one older list describes N as removing only the outline, so check the result in your version.",
     "steps": [
       "Select the cells you want to change.",
       "Press Alt and let go, then press H, then B, then A to add borders around every cell. Use H, B, N instead to remove the borders.",
       "Each key is pressed on its own, in order. Do not hold them down together.",
+      "For more control, press Alt, H, B, M to open the Borders tab of the Format Cells dialog. There, hold Alt and press a letter to pick a border: T top, B bottom, L left, R right, H inside horizontal, V inside vertical, O outline, I inside, N none. U and D add the up and down diagonal lines.",
+      "Press Enter or click OK to apply it.",
       "If a letter does not match in your version, press Alt and follow the Key Tips (the small letters that appear on the ribbon) to the same command."
     ],
     "keywords": [
@@ -2139,17 +2305,25 @@
       "all borders",
       "outline",
       "formatting",
-      "shortcut"
+      "shortcut",
+      "more borders",
+      "top border",
+      "bottom border",
+      "outside border",
+      "inside border"
     ],
     "taskPhrases": [
       "add borders around all cells",
       "remove borders from a range",
       "put a grid around the data",
-      "clear cell borders"
+      "clear cell borders",
+      "add only a top or bottom border",
+      "put an outline around a selection"
     ],
     "notes": [
       "Alt, H, B opens the Borders menu on the Home tab. The last letter picks the option inside it.",
-      "Borders and gridlines are different things. Borders are formatting you add to cells, while gridlines are the faint lines Excel draws on the sheet."
+      "Borders and gridlines are different things. Borders are formatting you add to cells, while gridlines are the faint lines Excel draws on the sheet.",
+      "Inside the More Borders dialog the letters are the underlined ones, so they follow the dialog and not the ribbon."
     ],
     "relatedEntryIds": [
       "toggle-gridlines",
@@ -2157,6 +2331,87 @@
     ],
     "lastVerified": "2026-11-13",
     "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "hide-cell-values",
+    "title": "Hide cell values",
+    "topic": "Formatting",
+    "description": "Make a cell look empty while its value stays in it, using the custom format ;;;",
+    "steps": [
+      "Select the cells whose values you want to hide.",
+      "Right-click and choose Format Cells (or press Ctrl + 1).",
+      "On the Number tab, choose Custom.",
+      "In the Type box, enter ;;; (three semicolons) and click OK.",
+      "To show the values again, set the cells back to General or another number format."
+    ],
+    "keywords": [
+      "hide cell values",
+      "hide text",
+      "invisible text",
+      "custom format",
+      "three semicolons",
+      "helper cells"
+    ],
+    "taskPhrases": [
+      "make the text in a cell invisible",
+      "hide the value of a cell without deleting it",
+      "hide helper cell values"
+    ],
+    "notes": [
+      "The value stays in the cell. It still shows in the formula bar when you select the cell, and formulas can still use it.",
+      "Anyone who selects the cell can see the value in the formula bar, so this hides it from view but does not protect it.",
+      "It is handy for helper cells or calculations you do not want to show."
+    ],
+    "relatedEntryIds": [],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/hide-or-display-cell-values-c94b3493-7762-4a53-8461-fb5cd9f05c33"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "paste-linked-picture",
+    "title": "Paste as a linked picture",
+    "topic": "Formatting",
+    "description": "Paste a live picture of some cells somewhere else, and it updates when the cells change.",
+    "keys": [
+      {
+        "label": "Copy the cells",
+        "windows": "Ctrl + C",
+        "mac": "Cmd + C"
+      },
+      {
+        "label": "Paste as a linked picture",
+        "windows": "Alt then H then V then I"
+      }
+    ],
+    "unofficial": "Alt, H, V, I is not listed on Microsoft’s pages. It follows the ribbon (Home > Paste > Linked Picture), and community guides give the same letters. Microsoft documents linking a range to a picture through the Camera command instead, so check the keys in your version.",
+    "steps": [
+      "Select the cells you want a picture of and press Ctrl + C.",
+      "Click the cell or sheet where the picture should go.",
+      "Press Alt and let go, then press H, then V, then I, one key at a time.",
+      "Change a value in the original cells. The picture updates to match.",
+      "If a letter does not match in your version, press Alt and follow the Key Tips (the small letters that appear on the ribbon) to the same command."
+    ],
+    "keywords": [
+      "linked picture",
+      "live picture",
+      "paste as picture",
+      "dynamic picture",
+      "camera"
+    ],
+    "taskPhrases": [
+      "paste a live picture of a range",
+      "show a copy of some cells that updates itself",
+      "lay out a report from cells on other sheets"
+    ],
+    "notes": [
+      "The picture is a live copy of the cells: it follows changes in the original cells.",
+      "It helps you see how changing one cell far away affects results elsewhere in a large workbook, or lay out a neat report.",
+      "Microsoft’s documented way to link cells to a picture is the Camera command, which you add to the Quick Access Toolbar first."
+    ],
+    "relatedEntryIds": [],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/dynamically-display-the-contents-of-a-cell-or-range-in-a-graphic-object-e2e7a629-5662-42d6-9295-06d112c2099f"
   },
   {
     "id": "highlight-duplicates",
@@ -3023,16 +3278,412 @@
       "pick out one kind of cell from a selection"
     ],
     "notes": [
-      "The options Microsoft lists are Comments or Notes, Constants, Formulas, Blanks, Current region, Current array, Objects, Row differences, Column differences, Precedents, Dependents, Last cell, Visible cells only, Conditional formats and Data validation.",
-      "Visible cells only selects just the cells you can see in a range that crosses hidden rows or columns. On Mac, Microsoft also lists Shift + Cmd + * for it.",
-      "Precedents and Dependents select the cells a formula uses, or the formulas that use a cell. Choose Direct only or All levels.",
-      "Row differences and Column differences select the cells in a row or column that differ from the active cell."
+      "On Mac, Microsoft also lists Shift + Cmd + * for Visible cells only."
     ],
     "relatedEntryIds": [
       "trace-references",
       "select-row-column"
     ],
     "lastVerified": "2026-11-13",
-    "sourceUrl": "https://support.microsoft.com/en-us/excel/find-and-select-cells-that-meet-specific-conditions-in-excel"
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/find-and-select-cells-that-meet-specific-conditions-in-excel",
+    "options": [
+      {
+        "name": "Comments or Notes",
+        "text": "Cells that contain notes."
+      },
+      {
+        "name": "Constants",
+        "text": "Cells that hold a typed-in value rather than a formula. Tick Numbers, Text, Logicals or Errors to keep only those kinds."
+      },
+      {
+        "name": "Formulas",
+        "text": "Cells that contain formulas. The same four ticks narrow them down by the kind of result."
+      },
+      {
+        "name": "Blanks",
+        "text": "Empty cells."
+      },
+      {
+        "name": "Current region",
+        "text": "The whole block of data around the active cell, such as an entire list."
+      },
+      {
+        "name": "Current array",
+        "text": "The whole array, if the active cell is part of one."
+      },
+      {
+        "name": "Objects",
+        "text": "Charts, buttons and other graphical objects on the sheet, including those in text boxes."
+      },
+      {
+        "name": "Row differences",
+        "text": "Cells in a selected row that differ from the active cell."
+      },
+      {
+        "name": "Column differences",
+        "text": "Cells in a selected column that differ from the active cell."
+      },
+      {
+        "name": "Precedents",
+        "text": "Cells that the formula in the active cell uses. Direct only picks the cells it refers to; All levels also picks the cells those depend on."
+      },
+      {
+        "name": "Dependents",
+        "text": "Cells with formulas that use the active cell. Direct only picks formulas that refer to it; All levels also picks formulas that depend on those."
+      },
+      {
+        "name": "Last cell",
+        "text": "The last cell on the sheet that contains data or formatting."
+      },
+      {
+        "name": "Visible cells only",
+        "text": "Only the cells you can see in a range that crosses hidden rows or columns."
+      },
+      {
+        "name": "Conditional formats",
+        "text": "Cells that have conditional formatting. All picks every one; Same picks only those that share the active cell’s formatting."
+      },
+      {
+        "name": "Data validation",
+        "text": "Cells that have data validation rules. All picks every one; Same picks only those that share the active cell’s rules."
+      }
+    ]
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "paste-values",
+    "title": "Paste values only",
+    "topic": "Data",
+    "description": "Paste what a cell shows, without its formula or formatting.",
+    "keys": [
+      {
+        "label": "Open Paste Special, then choose Values",
+        "windows": "Ctrl + Alt + V",
+        "mac": "Cmd + Ctrl + V"
+      },
+      {
+        "label": "Paste values straight away",
+        "windows": "Alt then H then V then V"
+      }
+    ],
+    "unofficial": "Alt, H, V, V is not listed in Microsoft’s shortcut list. It follows the ribbon (Home > Paste > Values), and community guides give the same letters. The documented route is Ctrl + Alt + V, then V.",
+    "steps": [
+      "Select the cells and press Ctrl + C (Cmd + C on Mac).",
+      "Click the cell where the values should go.",
+      "Press Ctrl + Alt + V to open Paste Special, choose Values (or press V), then click OK.",
+      "Or press Alt and let go, then H, then V, then V, one key at a time, to paste values in one go."
+    ],
+    "keywords": [
+      "paste values",
+      "paste special",
+      "values only",
+      "paste as values",
+      "ctrl alt v",
+      "remove formulas"
+    ],
+    "taskPhrases": [
+      "paste only the values and not the formulas",
+      "turn formulas into plain values",
+      "copy a result without its formula"
+    ],
+    "notes": [
+      "Pasting values turns the result into plain text or numbers, so it no longer updates when the original cells change.",
+      "On Mac, Microsoft lists no values-only shortcut. Use the Paste Special dialog."
+    ],
+    "relatedEntryIds": [
+      "fill-down"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "toggle-filter",
+    "title": "Turn filters on or off",
+    "topic": "Data",
+    "description": "Add filter buttons to a table of data, or remove them, from the keyboard.",
+    "keys": [
+      {
+        "windows": "Ctrl + Shift + L",
+        "mac": "Cmd + Shift + F"
+      }
+    ],
+    "unofficial": "Ctrl + Shift + L is not listed in Microsoft’s Windows shortcut list, though its Mac list gives Cmd + Shift + F or Ctrl + Shift + L. It is widely used on Windows too, but check it in your version.",
+    "steps": [
+      "Click a cell inside your data. Make sure each column has a header.",
+      "Press Ctrl + Shift + L. Filter buttons appear on the headers.",
+      "Click a button to sort the column or pick the values to show.",
+      "Press the same keys again to remove the filter buttons."
+    ],
+    "keywords": [
+      "filter",
+      "autofilter",
+      "filter buttons",
+      "turn on filter",
+      "ctrl shift l",
+      "filter shortcut"
+    ],
+    "taskPhrases": [
+      "add filter buttons to a table",
+      "turn filters on and off quickly",
+      "show only some rows of my data"
+    ],
+    "notes": [
+      "This changes what you see on the sheet. The FILTER function is different: it builds a separate list of results with a formula.",
+      "Pressing Ctrl + A first selects the whole block of data, which is a handy way to be sure the filter covers all of it."
+    ],
+    "relatedEntryIds": [
+      "filter",
+      "create-table"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "edit-cell",
+    "title": "Edit a cell",
+    "topic": "Data",
+    "description": "Start editing the selected cell without double-clicking it.",
+    "keys": [
+      {
+        "windows": "F2",
+        "mac": "F2"
+      }
+    ],
+    "steps": [
+      "Select the cell.",
+      "Press F2. The cursor goes to the end of what is in the cell, and you can type or fix it.",
+      "Press Enter to save the change, or Esc to cancel."
+    ],
+    "keywords": [
+      "edit cell",
+      "edit formula",
+      "f2",
+      "cell editor",
+      "change a cell"
+    ],
+    "taskPhrases": [
+      "edit a cell without double clicking",
+      "change a formula from the keyboard",
+      "put the cursor inside a cell"
+    ],
+    "notes": [
+      "It also works on formulas, so it is a quick way to fix one."
+    ],
+    "relatedEntryIds": [
+      "lock-references"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "format-cells",
+    "title": "Format Cells",
+    "topic": "Formatting",
+    "description": "Open the dialog with every format setting for the selected cells.",
+    "keys": [
+      {
+        "windows": "Ctrl + 1",
+        "mac": "Cmd + 1"
+      }
+    ],
+    "steps": [
+      "Select the cells you want to format.",
+      "Press Ctrl + 1 (Cmd + 1 on Mac). The Format Cells dialog opens.",
+      "Use the tabs, such as Number, Alignment, Font, Border and Fill, then click OK."
+    ],
+    "keywords": [
+      "format cells",
+      "cell format",
+      "ctrl 1",
+      "formatting dialog"
+    ],
+    "taskPhrases": [
+      "open the format cells window",
+      "change how cells look from one dialog",
+      "set borders and fill from one dialog"
+    ],
+    "notes": [
+      "Right-clicking a cell and choosing Format Cells opens the same dialog."
+    ],
+    "relatedEntryIds": [
+      "hide-cell-values",
+      "borders"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "line-break-in-cell",
+    "title": "New line in a cell",
+    "topic": "Text",
+    "description": "Start a new line inside one cell instead of moving to the next cell.",
+    "keys": [
+      {
+        "windows": "Alt + Enter",
+        "mac": "Ctrl + Option + Return"
+      }
+    ],
+    "steps": [
+      "Double-click the cell or press F2 to start editing it.",
+      "Type the first line of text.",
+      "Press Alt + Enter (Ctrl + Option + Return on Mac) to start a new line in the same cell.",
+      "Type the next line, then press Enter to finish."
+    ],
+    "keywords": [
+      "new line",
+      "alt enter",
+      "wrap text",
+      "multiple lines in a cell",
+      "enter inside a cell"
+    ],
+    "taskPhrases": [
+      "put two lines of text in one cell",
+      "start a new line inside a cell",
+      "add a second line to a cell"
+    ],
+    "notes": [
+      "If the cell still shows one long line, turn on Wrap Text for it on the Home tab."
+    ],
+    "relatedEntryIds": [
+      "edit-cell"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "number-format-shortcuts",
+    "title": "Currency, percent and date formats",
+    "topic": "Formatting",
+    "description": "Switch the selected cells to a number, currency, percentage or date format.",
+    "keys": [
+      {
+        "label": "Number (two decimal places)",
+        "windows": "Ctrl + Shift + !",
+        "mac": "Ctrl + Shift + !"
+      },
+      {
+        "label": "Currency",
+        "windows": "Ctrl + Shift + $",
+        "mac": "Ctrl + Shift + $"
+      },
+      {
+        "label": "Percentage",
+        "windows": "Ctrl + Shift + %",
+        "mac": "Ctrl + Shift + %"
+      },
+      {
+        "label": "Date (day, month, year)",
+        "windows": "Ctrl + Shift + #",
+        "mac": "Ctrl + Shift + #"
+      }
+    ],
+    "steps": [
+      "Select the cells you want to format.",
+      "Press the keys for the format you want. Each one needs Shift, because the symbol is on a number key (1, 4, 5 and 3)."
+    ],
+    "keywords": [
+      "currency",
+      "percentage",
+      "percent",
+      "date format",
+      "format as currency",
+      "format as percent",
+      "two decimal places"
+    ],
+    "taskPhrases": [
+      "format a column as currency",
+      "show values as percentages",
+      "change cells to a date format"
+    ],
+    "notes": [
+      "Percentage turns 0.25 into 25%, so apply it to cells that hold fractions, not to numbers that are already percentages.",
+      "For other formats, open Format Cells with Ctrl + 1."
+    ],
+    "relatedEntryIds": [
+      "format-cells"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "switch-sheets",
+    "title": "Switch between sheets",
+    "topic": "Navigation",
+    "description": "Move to the next or previous worksheet without clicking the tabs.",
+    "keys": [
+      {
+        "label": "Next sheet",
+        "windows": "Ctrl + Page Down",
+        "mac": "Option + Right Arrow"
+      },
+      {
+        "label": "Previous sheet",
+        "windows": "Ctrl + Page Up",
+        "mac": "Option + Left Arrow"
+      }
+    ],
+    "steps": [
+      "Press the Next sheet keys to move one sheet to the right.",
+      "Press the Previous sheet keys to move one sheet to the left."
+    ],
+    "keywords": [
+      "switch sheets",
+      "next sheet",
+      "previous sheet",
+      "move between sheets",
+      "worksheet tabs",
+      "page down"
+    ],
+    "taskPhrases": [
+      "go to the next worksheet",
+      "move between sheets with the keyboard",
+      "switch tabs in a workbook"
+    ],
+    "notes": [],
+    "relatedEntryIds": [
+      "jump-to-edge"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f"
+  },
+  {
+    "category": "tip",
+    "lastVerified": "2026-11-13",
+    "id": "keep-leading-zeros",
+    "title": "Keep leading zeros",
+    "topic": "Text",
+    "description": "Stop Excel dropping the zeros at the start of codes such as 00123 or 0412.",
+    "steps": [
+      "Click the cell and type an apostrophe (’) first, then the number, for example ’00123. Excel treats it as text and keeps the zeros.",
+      "To do it for a whole column, select it first, open Format Cells with Ctrl + 1, choose Text on the Number tab, then type the numbers.",
+      "If the zeros are already gone, use the formula =TEXT(A2, \"00000\") to add them back. The number of zeros is the total length you want."
+    ],
+    "keywords": [
+      "leading zeros",
+      "keep zeros",
+      "zip code",
+      "postcode",
+      "phone number zero",
+      "apostrophe"
+    ],
+    "taskPhrases": [
+      "stop excel removing the zero at the start",
+      "keep the zeros in a code",
+      "show 00123 instead of 123"
+    ],
+    "notes": [
+      "Text formatting must be set before you type the numbers. It does not bring back zeros that were already removed.",
+      "Excel keeps only 15 digits of a number. For longer codes, such as card numbers, use the Text format."
+    ],
+    "relatedEntryIds": [
+      "format-cells"
+    ],
+    "sourceUrl": "https://support.microsoft.com/en-us/excel/keeping-leading-zeros-and-large-numbers"
   }
 ]

@@ -10,7 +10,7 @@ _Generated 2026-11-13._
 
 | Version | Top-1 | Top-3 | MRR | Nothing-to-find handled |
 | --- | --- | --- | --- | --- |
-| Stage A | 73% | 81% | 0.78 | 3/4 |
+| Stage A | 73% | 81% | 0.77 | 3/4 |
 | Before | 94% | 98% | 0.96 | 3/4 |
 | After | 98% | 100% | 0.99 | 3/4 |
 
@@ -18,7 +18,7 @@ _Generated 2026-11-13._
 
 | Version | Top-1 | Top-3 | MRR | Nothing-to-find handled |
 | --- | --- | --- | --- | --- |
-| Stage A | 69% | 78% | 0.74 | 3/4 |
+| Stage A | 69% | 78% | 0.73 | 3/4 |
 | Before | 93% | 98% | 0.95 | 3/4 |
 | After | 98% | 100% | 0.99 | 3/4 |
 
@@ -53,7 +53,7 @@ These were written before any results were seen. Only the totals are shown here,
 | --- | --- | --- | --- | --- |
 | Stage A | 62% | 73% | 0.67 | 1/2 |
 | Before | 81% | 92% | 0.88 | 1/2 |
-| After | 81% | 92% | 0.88 | 1/2 |
+| After | 81% | 92% | 0.87 | 1/2 |
 
 ### By category
 
@@ -61,10 +61,10 @@ These were written before any results were seen. Only the totals are shown here,
 | --- | --- | --- | --- | --- |
 | exact | 3 | 100% / 100% | 100% / 100% | 100% / 100% |
 | partial | 3 | 100% / 100% | 100% / 100% | 100% / 100% |
-| task | 8 | 88% / 100% | 88% / 100% | 88% / 100% |
+| task | 8 | 88% / 100% | 88% / 100% | 100% / 100% |
 | synonym | 4 | 25% / 50% | 25% / 50% | 25% / 50% |
 | typo | 3 | 0% / 0% | 100% / 100% | 100% / 100% |
-| word-form | 3 | 33% / 67% | 100% / 100% | 100% / 100% |
+| word-form | 3 | 33% / 67% | 100% / 100% | 67% / 100% |
 | body-text | 2 | 50% / 50% | 50% / 100% | 50% / 100% |
 | tip | 6 | 100% / 100% | 100% / 100% | 100% / 100% |
 | ambiguous | 2 | 100% / 100% | 100% / 100% | 100% / 100% |
@@ -76,7 +76,7 @@ A miss is a query where no correct answer appeared in the top three, or where a 
 
 | Query | Category | Wanted | Returned (top 3) | Result | vs Stage A |
 | --- | --- | --- | --- | --- | --- |
-| pivot table | no-result | nothing | create-table, vlookup, jump-to-edge (+4 more) | returned 7 result(s) | Stage A missed too |
+| pivot table | no-result | nothing | create-table, toggle-filter, vlookup (+5 more) | returned 8 result(s) | Stage A missed too |
 
 ## Right answer, wrong place
 

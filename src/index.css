@@ -1070,6 +1070,23 @@ kbd {
   margin-top: 8px;
 }
 
+/* One option per row: its name, then what it does. */
+.options {
+  display: grid;
+  gap: 10px;
+  max-width: 90ch;
+  margin: 0;
+}
+
+.options dt {
+  font-weight: 600;
+}
+
+.options dd {
+  margin: 2px 0 0;
+  color: var(--text-muted);
+}
+
 /* =========================
    Tips are blue (functions stay green)
    ========================= */

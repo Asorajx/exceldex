@@ -53,6 +53,15 @@ describe('tips', () => {
     }
   });
 
+  it('explains each Go To Special option', () => {
+    const options = tipEntries.find((t) => t.id === 'go-to-special')!.options!;
+    expect(options.length).toBeGreaterThan(10);
+    for (const option of options) {
+      expect(option.name.trim(), option.name).not.toBe('');
+      expect(option.text.trim(), option.name).not.toBe('');
+    }
+  });
+
   it('combines the row and column shortcuts into one tip', () => {
     const select = tipEntries.find((t) => t.id === 'select-row-column')!;
     expect(select.keys).toHaveLength(2);
@@ -66,7 +75,10 @@ describe('tips', () => {
       'data-form',
       'go-to-special',
       'highlight-duplicates',
+      'paste-linked-picture',
+      'paste-values',
       'select-row-column',
+      'toggle-filter',
       'toggle-gridlines',
       'trace-references'
     ]);
