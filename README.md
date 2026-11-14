@@ -73,6 +73,4 @@ ExcelDex is an independent project. It isn't affiliated with, endorsed by or spo
 
 ## Documentation
 
-How search works, the search evaluation and its limits, accessibility and privacy checks, and where the content comes from are covered in the project report.
-
-Full project report: _add the link here if you write one._
+Full project report: [P05-ExcelDex.pdf](P05-ExcelDex.pdf)
