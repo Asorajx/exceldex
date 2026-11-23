@@ -27,4 +27,5 @@ dist-ssr
 *.sw?
 
 # Notes kept for the project report (not published)
-docs/
+docs/*
+!docs/P05-ExcelDex.md

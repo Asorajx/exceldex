@@ -73,4 +73,4 @@ ExcelDex is an independent project. It isn't affiliated with, endorsed by or spo
 
 ## Documentation
 
-Full project report: [P05-ExcelDex.pdf](P05-ExcelDex.pdf)
+Full project report: [P05-ExcelDex.md](docs/P05-ExcelDex.md)
