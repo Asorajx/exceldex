@@ -2,7 +2,7 @@
 
 Personal Project 05
 
-14 November 2026
+Completed: 14 November 2026
 
 ## 1. Overview
 
